@@ -15,7 +15,7 @@ import { useQs } from 'ui'
 //const endpoint = 'https://api.fwrlines.com/graphql'
 
 export default {
-  title: 'ccommon/useQs',
+  title: 'common/useQs',
   component:useQs,
   //componentSubtitle:'Component subtitle',
   subcomponents: {
