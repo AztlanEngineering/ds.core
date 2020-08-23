@@ -99,7 +99,7 @@ const ContentSlides = ({
 
   const setCurrentSlide = index => {
     const newSlide=slides[index]
-    console.log('dispacthing new slide', index, newSlide)
+    //console.log('dispacthing new slide', index, newSlide)
     newSlide.location && history.push(newSlide.location)
     dispatch({
       type   :'SET_CURRENT_SLIDE',
