@@ -34,7 +34,7 @@ const File = ({
   } = useContext(FileExplorerContext)
   const fullName = [parentsPath, name].join('/')
   const current = selectedFile == fullName
-  console.log(selectedFile, fullName)
+  //console.log(selectedFile, fullName)
 
   return (
     <li
