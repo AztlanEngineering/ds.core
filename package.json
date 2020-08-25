@@ -1,7 +1,7 @@
 {
   "name": "@fwrlines/ds.core",
   "author": "",
-  "version": "1.0.0",
+  "version": "1.1.1",
   "description": "",
   "main": "dist/cjs/index.js",
   "module": "dist/es/index.js",
@@ -16,8 +16,8 @@
     "now-build": "mkdir ./public && npm run build-storybook --quiet",
     "copy-css:cjs": "copyfiles -u 2 src/ui/**/*.scss dist/cjs",
     "copy-css:es": "copyfiles -u 2 src/ui/**/*.scss dist/es",
-    "compile:cjs": "NODE_ENV=cjs babel src/ui --out-dir dist/cjs --ignore **/storie*/*.js",
-    "compile:es": "NODE_ENV=es babel src/ui --out-dir dist/es --ignore **/stories/*.js",
+    "compile:cjs": "NODE_ENV=cjs babel src/ui --out-dir dist/cjs --ignore src/stories",
+    "compile:es": "NODE_ENV=es babel src/ui --out-dir dist/es --ignore src/stories",
     "build:cjs": "npm run compile:cjs && npm run copy-css:cjs",
     "build:es": "npm run compile:es && npm run copy-css:es",
     "compile": "npm run pre-compile && npm run build:cjs && npm run build:es",
@@ -29,7 +29,7 @@
     "bd": "npm run build&&npm run commit ",
     "npre": "nodemon --watch src --exec 'npm run build:es && echo done'",
     "postinstall": "node ./scripts/postinstall.js",
-    "relink": "npm link @fwrlines/alphabet-scss && npm link @fwrlines/swatch && npm link @fwrlines/utils"
+    "relink": "npm link @fwrlines/swatch && npm link @fwrlines/utils"
   },
   "keywords": [],
   "license": "ISC",
