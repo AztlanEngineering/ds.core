@@ -116,7 +116,7 @@ const Accordion = ({
 
   const openAll = useMemo(
     () => () => {
-      console.log('OA')
+	    //console.log('OA')
       dispatch({
         type:'OPEN_ALL',
       })
@@ -136,7 +136,7 @@ const Accordion = ({
 
   const closeAll = useMemo(
     () => () => {
-      console.log('CA')
+      //console.log('CA')
       dispatch({
         type:'CLOSE_ALL',
       })
@@ -146,7 +146,7 @@ const Accordion = ({
 
   const closeOne = useMemo(
     () => (id) => {
-      console.log('C1')
+      //console.log('C1')
       dispatch({
         type   :'CLOSE_ONE',
         payload:id
@@ -157,7 +157,7 @@ const Accordion = ({
 
   const register = useMemo(
     () => (id) => {
-      console.log('REG', id)
+      //console.log('REG', id)
       dispatch({
         type   :'REGISTER',
         payload:id
