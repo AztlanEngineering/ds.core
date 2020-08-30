@@ -10,16 +10,16 @@ import { Main } from './common'
 
 //Intl
 
-//import { FormattedMessage} from "react-intl";
-//import messages from "./messages";
-// <FormattedMessage {...messages.title} />
+/* import { FormattedMessage} from "react-intl";
+   import messages from "./messages";
+    <FormattedMessage {...messages.title} /> */
 
 //Config
 
 //import C from 'ui/cssClasses'
 
-//Relative imports
-//import styles from './footer.scss'
+/* Relative imports
+   import styles from './footer.scss' */
 import { isBackend } from 'ui/isBackend'
 
 if(!isBackend) {
@@ -31,7 +31,7 @@ const baseClassName = 'footer'
 
 /**
  * Use `Footer` to
- * Has color `x` 
+ * Has color `x`
  */
 const Footer = ({
   id,
@@ -41,66 +41,68 @@ const Footer = ({
   end
 
 }) => {
-  
-  
+
+
   return (
-  <footer 
-    className={
-      [
+    <footer
+      className={
+        [
         //styles[baseClassName],
-        baseClassName,
-        className
-      ].filter(e => e).join(' ')
-  }
-    id={ id }
-    style={ style }
-  >
-    <div className="content">
-    { children }
-    </div>
-    { end }
-  </footer>
-)}
+          baseClassName,
+          className
+        ].filter(e => e).join(' ')
+      }
+      id={ id }
+      style={ style }
+    >
+      <div
+        className='content'
+      >
+        { children }
+      </div>
+      { end }
+    </footer>
+  )}
 
 Footer.propTypes = {
   /**
    * Provide an HTML id to this element
    */
-  id: PropTypes.string,
+  id:PropTypes.string,
 
   /**
    * The html class names to be provided to this element
    */
-  className: PropTypes.string,
+  className:PropTypes.string,
 
   /**
    * The JSX-Written, css styles to apply to the element.
    */
-  style: PropTypes.object,
+  style:PropTypes.object,
 
   /**
    *  The children JSX
    */
-  children: PropTypes.node,
+  children:PropTypes.node,
 
   /**
    * Which html tag to use
    */
-  as: PropTypes.oneOfType([
+  as:PropTypes.oneOfType([
     PropTypes.string,
     PropTypes.object
-  ]), 
+  ]),
   //as: PropTypes.string,
 
   /**
    * The height of the element
    */
-  height: PropTypes.string,
+  height:PropTypes.string,
 
   /**
    * The width of the element
    */
-  width: PropTypes.string,
+  width:PropTypes.string,
   /*
   : PropTypes.shape({
     id: PropTypes.string.isRequired,

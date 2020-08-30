@@ -29,7 +29,7 @@ const Label = ({
   dash,
 
   as:Wrapper,
-  
+
   ...otherProps
 }) => {
 
@@ -85,7 +85,7 @@ Label.propTypes = {
   /**
    * Circular
    */
-  circle:PropTypes.bool,
+  circle:PropTypes.number,
 
   /**
    * Whether to apply the dash style
@@ -112,7 +112,7 @@ Label.defaultProps = {
   as    :'span',
   basic :false,
   simple:false,
-  dash:false
+  dash  :false
 }
 
 export default Label

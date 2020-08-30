@@ -96,20 +96,20 @@ const AnimatedVCaret = ({
                   attributeName='y2'
                   values={`${100 - swd};82;18;${swd}`}
                   keyTimes='0;.25;.75; 1'
-                  dur={ duration + 's' }
+                  dur={ duration }
                   fill='freeze'
                   //dur={ animationDuration + 's' }
                   repeatCount='1'
                   restart='always'
                   begin={`${listenToId}.click`}
                 />
-						  :
+                :
                 <animate
                   attributeType='XML'
                   attributeName='y2'
                   values={`${swd};18;82;${100 - swd}`}
                   keyTimes='0;.25;.75; 1'
-                  dur={ duration + 's'}
+                  dur={ duration }
                   fill='freeze'
                   //dur={ animationDuration + 's' }
                   repeatCount='1'
