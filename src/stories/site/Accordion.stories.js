@@ -19,14 +19,14 @@ export default {
   component    :Accordion,
   //componentSubtitle:'Component subtitle',
   subcomponents:{
-    'Accordion.Debug'       :Accordion.Debug,
-    'Accordion.Item'        :Accordion.Item,
+    'Accordion.Debug':Accordion.Debug,
+    'Accordion.Item':Accordion.Item,
     'Accordion.Item.Section':Accordion.Item.Section,
     'Accordion.Item.Divider':Accordion.Item.Divider
   },
   parameters:{
     decorators:[
-      storyfn => <div className='x-white b-dark-x p-u u2'>{ storyfn() }</div>,
+       storyfn => <div className="x-white b-dark-x p-u u2">{ storyfn() }</div>,
       /*   storyfn => <AplProvider endpoint={ endpoint }>{ storyfn() }</AplProvider>,
          storyfn => <Router>{ storyfn() }</Router>, */
     ]
@@ -49,11 +49,12 @@ export const Default = () => {
 
   const generateItem = () => {
     return {
-      title:<Heading
-        headingClassName='h2 c-dark-x'
-        heading={ faker.lorem.sentence()}
-        subtitle={ faker.lorem.sentence() }
-            >
+      title   :
+        <Heading 
+          headingClassName='h2 c-dark-x' 
+          heading={ faker.lorem.sentence()}
+          subtitle={ faker.lorem.sentence() }
+        >
       </Heading>,
       children:<p>{ faker.lorem.paragraph(6) }</p>
     }
@@ -76,7 +77,7 @@ export const Default = () => {
           key={ i }
         />
       ) }
-    </Accordion>
+      </Accordion>
   )
 }
 
@@ -86,12 +87,13 @@ export const PlusMinus = () => {
 
   const generateItem = () => {
     return {
-      title:<Heading
-        headingClassName='h2 c-on-y'
-        heading={ faker.lorem.sentence()}
-        subtitle={ faker.lorem.sentence() }
-        subtitleClassName='x-subtitle c-light-x'
-            >
+      title   :
+        <Heading 
+          headingClassName='h2 c-on-y' 
+          heading={ faker.lorem.sentence()}
+          subtitle={ faker.lorem.sentence() }
+          subtitleClassName='x-subtitle c-light-x'
+        >
       </Heading>,
       children:<p className='c-x'>{ faker.lorem.paragraph(6) }</p>
     }
@@ -104,10 +106,7 @@ export const PlusMinus = () => {
   ]
 
   return(
-    <Accordion
-      className='s0 k-s y-white x-subtitle'
-      toggleStyle='plus'
-    >
+    <Accordion className='s0 k-s y-white x-subtitle' toggleStyle='plus'>
       <Accordion.Debug/>
       { items.map((el, i) =>
         <Accordion.Item
@@ -116,7 +115,7 @@ export const PlusMinus = () => {
           key={ i }
         />
       ) }
-    </Accordion>
+      </Accordion>
   )
 }
 

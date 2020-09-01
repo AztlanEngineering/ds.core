@@ -82,7 +82,7 @@ export const Stretch = () => (
     paginator={ pagThree }
     spread={ 4 }
     getLink={ getLink }
-    stretch={true}
+    stretch
   />
 )
 

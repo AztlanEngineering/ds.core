@@ -70,12 +70,12 @@ export const Default = () => {
   )
 }
 
-export const Order = (id) => {
+export const Order = () => {
   const [isVisible, setVisible] = useState(true)
 
   return (
     <>
-      <div id={id}>
+      <div id>
         <InnerContent
           dangerouslySetInnerHTML={{ __html: TEXT_XS }}
         />

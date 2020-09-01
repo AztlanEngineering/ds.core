@@ -75,7 +75,6 @@ export const Default = () => (
 export const Variant = () => (
   variants.map((e,i) =>
     <div
-      key={i}
       className='p1'
       style={{ width: 150 + 60*i + 'px'}}
     >
