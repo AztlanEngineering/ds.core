@@ -80,7 +80,10 @@ const Paginator = ({
         id={ id }
         style={ style }
       >
-        <Button.Group stretch={ stretch && 'horizontal' } independent={ independent }>
+        <Button.Group
+          stretch={ stretch && 'horizontal' }
+          independent={ independent }
+        >
 
           { page != 1 &&
             <>
@@ -238,7 +241,7 @@ Paginator.defaultProps = {
   nextMessage        :messages.next,
   leftIcon           :'h',
   rightIcon          :'l',
-  independent:false,
+  independent        :false,
 }
 
 export default Paginator

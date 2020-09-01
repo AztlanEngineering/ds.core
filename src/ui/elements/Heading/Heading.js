@@ -81,7 +81,7 @@ const Heading = ({
           className={
             (subtitleClassName ? ' ' + subtitleClassName : '')
           }
-    style={ subtitleStyle }
+          style={ subtitleStyle }
           { ...subtitleProps }
         >
           { subtitle }
@@ -161,7 +161,8 @@ Heading.propTypes = {
    */
   labelAs:PropTypes.oneOfType([
     PropTypes.string,
-    PropTypes.object
+    PropTypes.object,
+    PropTypes.func
   ]),
 
   /**

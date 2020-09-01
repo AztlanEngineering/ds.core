@@ -58,7 +58,7 @@ const PageProgressBar = ({
   return (
     <ProgressBar
       {...barProps}
-      maximum={'100'}
+      maximum={100}
       current={ progress }
     />
   )}

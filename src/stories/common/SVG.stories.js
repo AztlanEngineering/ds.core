@@ -79,16 +79,15 @@ export const Animated = () => (
 
 export const FillColors = () => (
   ALL_COLORS.map((e,i) =>
-    <>
+    <div key={i}>
       <span>{ e }</span>
       <SVG
-        key={i}
         height='200'
         width='200'
         target='engine'
         className={'x-' + e}
       />
-    </>
+    </div>
   )
 )
 

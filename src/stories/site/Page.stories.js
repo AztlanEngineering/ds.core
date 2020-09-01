@@ -25,7 +25,7 @@ const id = 'homepage'
 const titles = [
 
   {
-    classname:'uc',
+    className       :'uc',
     heading         :'Spartacus',
     subtitle        :'Stanley Kubrick, 1960',
     headingAs       :'h1',
@@ -67,13 +67,17 @@ const helmet = {
 
 
 export const Default = () => (
-  <Page id={ id }>
+  <Page
+    id={ id }
+    title='Default helmet'
+  >
     READ SOURCE
   </Page>
 )
 export const DefaultWithSchema = () => (
   <Page
     id={ id }
+    title='Default helmet'
     itemType='https://schema.org/FAQPage'
     canonical='meccamico.com/blah'
     HELMET={ helmet }
@@ -82,7 +86,10 @@ export const DefaultWithSchema = () => (
   </Page>
 )
 export const Head = () => (
-  <Page id={ id }>
+  <Page
+    id={ id }
+    title='Default helmet'
+  >
     <Page.Section
       head
       id='head'
@@ -100,6 +107,7 @@ export const Head = () => (
 export const HeadWithSchema = () => (
   <Page
     id={ id }
+    title='Default helmet'
     itemType='https://schema.org/FAQPage'
     HELMET={ helmet }
   >
@@ -118,7 +126,10 @@ export const HeadWithSchema = () => (
 
 )
 export const Plural = () => (
-  <Page id={ id }>
+  <Page
+    id={ id }
+    title='Default helmet'
+  >
     <Page.Section
       head
       className='pu u2'
@@ -148,7 +159,10 @@ export const Plural = () => (
   </Page>
 )
 export const PluralCaretDown = () => (
-  <Page id={ id }>
+  <Page
+    id={ id }
+    title='Default helmet'
+  >
     <Page.Section
       head
       id='head'
@@ -181,7 +195,10 @@ export const PluralCaretDown = () => (
 )
 
 export const Content = () => (
-  <Page id={ id }>
+  <Page
+    id={ id }
+    title='Default helmet'
+  >
     <Page.Section
       head
       id='head'

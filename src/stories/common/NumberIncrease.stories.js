@@ -104,7 +104,7 @@ export const WithSuffix = () =>(
 
 export const WithSuffixClass = () => (
   variants.map((e,i) =>
-    <>
+    <div key={i}>
       <p>
         Num
         { e.number }
@@ -120,7 +120,7 @@ export const WithSuffixClass = () => (
         className='s2 ks'
         suffixClassName={ i % 2 == 0 ? 'c-x x-red' : 'c-x x-green' }
       />
-    </>
+    </div>
   )
 )
 
