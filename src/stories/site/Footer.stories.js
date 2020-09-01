@@ -42,7 +42,7 @@ const storyParameters = {
 
  */
 
-export const Default = (id) => {
+export const Default = () => {
   const config={
     SITE_NAME       :'Internet 1999',
     //SITE_CANONICAL:'https://internet1999.org',
@@ -54,10 +54,7 @@ export const Default = (id) => {
   }
 
   return (
-    <SiteContextProvider
-      config={ config }
-      key={id}
-    >
+    <SiteContextProvider config={ config }>
       <Footer>
         <Footer.Main className='b-y y-yellow uc sm-ul'>
           { faker.lorem.paragraph() }

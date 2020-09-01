@@ -59,7 +59,7 @@ InnerContent.propTypes = {
    *  The children JSX
    */
   children               :PropTypes.node,
-  dangerouslySetInnerHTML:PropTypes.object,
+  dangerouslySetInnerHTML:PropTypes.string,
 
   /*
   : PropTypes.shape({

@@ -73,7 +73,7 @@ export const Bolder = () => {
       setActive={ setActive }
       id='myarrow'
       className='c-violet'
-      strokeWidth={20}
+      strokeWidth='20'
       width='300px'
     />
 
