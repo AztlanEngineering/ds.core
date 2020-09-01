@@ -140,13 +140,13 @@ Rating.propTypes = {
   /**
    * Whether to displayremaining starts as "empty"
    */
-  emptyStars:PropTypes.bool,
+  emptyStars:PropTypes.boolean,
 
 
   /**
    * Whether the starts "shine"
    */
-  animated:PropTypes.bool,
+  animated:PropTypes.boolean,
 
   /**
    * The TEXT module

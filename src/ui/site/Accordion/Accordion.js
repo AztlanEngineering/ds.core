@@ -202,7 +202,6 @@ const Accordion = ({
         }
         id={ id }
         style={ style }
-        key={id}
       >
         { children }
       </Wrapper>
