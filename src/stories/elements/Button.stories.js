@@ -160,7 +160,7 @@ export const Sizes = () =>
 
 export const ButtonIconOnly = () =>
   icons_map.map((e,i) =>
-    <>
+    <div key={i}>
       <Button
         className={'ks s2  x-' + e.back }
         icon={ e.icon }
@@ -179,12 +179,15 @@ export const ButtonIconOnly = () =>
       >
       </Button>
       <br/>
-    </>
+    </div>
   )
 
 export const ButtonLoading = () =>
   icons_map.map((e,i) =>
-    <div className='p1'>
+    <div
+      key={i}
+      className='p1'
+    >
       <Button
         className={'s2 ks x-' + e.back }
         iconSide={ e.side }
@@ -282,6 +285,7 @@ export const GroupIndep = () =>
     <Button.Group independent>
       {icons_map.slice(2).map((e,i) =>
         <Button
+          key={i}
           className={'ks s2 x-' + e.back}
         >
           { e.text }

@@ -25,7 +25,7 @@ const id = 'homepage'
 const titles = [
 
   {
-    classname:'uc',
+    className       :'uc',
     heading         :'Spartacus',
     subtitle        :'Stanley Kubrick, 1960',
     headingAs       :'h1',
@@ -67,13 +67,17 @@ const helmet = {
 
 
 export const Default = () => (
-  <Page id={ id }>
+  <Page
+    title='defaultHelmet'
+    id={ id }
+  >
     READ SOURCE
   </Page>
 )
 export const DefaultWithSchema = () => (
   <Page
     id={ id }
+    title='defaultHelmet'
     itemType='https://schema.org/FAQPage'
     canonical='meccamico.com/blah'
     HELMET={ helmet }
@@ -82,8 +86,12 @@ export const DefaultWithSchema = () => (
   </Page>
 )
 export const Head = () => (
-  <Page id={ id }>
+  <Page
+    title='defaultHelmet'
+    id={ id }
+  >
     <Page.Section
+      key='head'
       head
       id='head'
       HELMET={ helmet }
@@ -91,65 +99,80 @@ export const Head = () => (
     >
 
       <Heading
+        key='heading'
         { ...titles[0] }
       />
-      <p>See source code to check for meta</p>
+      <p key='p'>See source code to check for meta</p>
     </Page.Section>
   </Page>
 )
 export const HeadWithSchema = () => (
   <Page
     id={ id }
+    title='defaultHelmet'
     itemType='https://schema.org/FAQPage'
     HELMET={ helmet }
   >
     <Page.Section
+      key='head'
       head
       className='pu u2'
       id='head'
     >
 
       <Heading
+        key='heading'
         { ...titles[0] }
       />
-      <p>See source code to check for meta</p>
+      <p key='p'>See source code to check for meta</p>
     </Page.Section>
   </Page>
 
 )
 export const Plural = () => (
-  <Page id={ id }>
+  <Page
+    title='defaultHelmet'
+    id={ id }
+  >
     <Page.Section
+      key='head'
       head
       className='pu u2'
       id='head'
     >
 
       <Heading
+        key='heading'
         { ...titles[0] }
       />
     </Page.Section>
     <Page.Section
+      key='a1'
       id='a1'
       className='pu u2'
     >
-      <h2>Section A1</h2>
-      <p>{ TEXT_XXS_ESC }</p>
+      <h2 key='h2'>Section A1</h2>
+      <p key='p'>{ TEXT_XXS_ESC }</p>
 
     </Page.Section>
     <Page.Section
+      key='a2'
       id='a2'
       className='pu u2'
     >
-      <h2>Section A2</h2>
-      <p>{ TEXT_XXS_ESC }</p>
+      <h2 key='h22'>Section A2</h2>
+      <p key='pp'>{ TEXT_XXS_ESC }</p>
 
     </Page.Section>
   </Page>
 )
 export const PluralCaretDown = () => (
-  <Page id={ id }>
+  <Page
+    title='defaultHelmet'
+    id={ id }
+  >
     <Page.Section
+      key='head'
       head
       id='head'
       caretDown='a1'
@@ -157,32 +180,43 @@ export const PluralCaretDown = () => (
     >
 
       <Heading
+        key='heading'
         { ...titles[0] }
       />
     </Page.Section>
     <Page.Section
+      key='a1'
       id='a1'
       caretDown='a2'
       className='pu u2'
     >
-      <h2>Section A1</h2>
-      <p>{ TEXT_XXS_ESC }</p>
+      <h2 key='h2'>Section A1</h2>
+      <p key='p'>{ TEXT_XXS_ESC }</p>
 
     </Page.Section>
     <Page.Section
+      key='a2'
       id='a2'
       className='pu u2'
     >
-      <h2>Section A2</h2>
-      <p dangerouslySetInnerHTML={{ __html: TEXT_XS }}></p>
+      <h2 key='h22'>Section A2</h2>
+      <p
+        key='pp'
+        dangerouslySetInnerHTML={{ __html: TEXT_XS }}
+      >
+      </p>
 
     </Page.Section>
   </Page>
 )
 
 export const Content = () => (
-  <Page id={ id }>
+  <Page
+    title='defaultHelmet'
+    id={ id }
+  >
     <Page.Section
+      key='head'
       head
       id='head'
       caretDown='a1'
@@ -190,14 +224,17 @@ export const Content = () => (
     >
 
       <Heading
+        key='heading'
         { ...titles[0] }
       />
     </Page.Section>
     <Page.Section
+      key='a1'
       id='a1'
       className='pu u2'
     >
       <InnerContent
+        key='innercontent'
         dangerouslySetInnerHTML={{ __html: TEXT }}
       />
 

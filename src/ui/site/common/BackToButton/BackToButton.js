@@ -56,7 +56,7 @@ const BackToButton = ({
     <Wrapper
       className={
         [
-          styles[baseClassName],
+          baseClassName,
           className
         ].filter(e => e).join(' ')
       }

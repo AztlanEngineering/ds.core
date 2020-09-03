@@ -103,7 +103,7 @@ const AnimatedVCaret = ({
                   restart='always'
                   begin={`${listenToId}.click`}
                 />
-						  :
+		  :
                 <animate
                   attributeType='XML'
                   attributeName='y2'
@@ -167,7 +167,10 @@ AnimatedVCaret.propTypes = {
   /**
    * The duration of the animation in seconds
    */
-  duration:PropTypes.number,
+  duration:PropTypes.oneOfType([
+    PropTypes.number,
+    PropTypes.string
+  ]),
 
   /**
    * The stroke width SVG  Property

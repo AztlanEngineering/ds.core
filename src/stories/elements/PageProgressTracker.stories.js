@@ -20,7 +20,10 @@ export default {
 
 export const Default = () => (
   <>
-    <PageProgressBar style={{ position: 'fixed', top: '0', left: '0' }}/>
+    <PageProgressBar
+      spyOn='txt'
+      style={{ position: 'fixed', top: '0', left: '0' }}
+    />
     <div
       dangerouslySetInnerHTML={{ __html: TEXT }}
       style={{ marginTop: '200px' }}
@@ -59,6 +62,7 @@ export const InitialId = () => (
     <PageProgressBar
       style={{ position: 'fixed', top: '0', left: '0' }}
       initializeAt='txt'
+      spyOn='txt'
     />
     <h2 className='c-black'>We Initialize at the blue text</h2>
     <div
@@ -90,6 +94,7 @@ export const Color = () => (
       style={{ position: 'fixed', top: '0', left: '0' }}
       initializeAt='txt'
       rectClassName='x-green'
+      spyOn='txt'
     />
     <h2 className='c-black'>We Initialize at the blue text</h2>
     <div
@@ -115,6 +120,7 @@ export const Color = () => (
 export const Gradient = () => (
   <>
     <PageProgressBar
+      spyOn='txt'
       style={{ position: 'fixed', top: '0', left: '0' }}
       initializeAt='txt'
       gradientMap={
@@ -149,6 +155,7 @@ export const Gradient = () => (
 export const StrokeWidth = () => (
   <>
     <PageProgressBar
+      spyOn='txt'
       style={{ position: 'fixed', top: '0', left: '0' }}
       initializeAt='txt'
       strokeWidth={30}

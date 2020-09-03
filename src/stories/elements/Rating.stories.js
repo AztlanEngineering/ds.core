@@ -88,34 +88,34 @@ las manos llenas de color!
 export const Default = () => (
   ratings_map.map((e,i) =>
     <Rating
+      key={i}
       style={{ width: '400px' }}
       className='x-primary y-secondary'
       { ...e }
       asCard
-      key={i}
     />
   )
 )
 
 export const NoTitle = () => (
-		  ratings_map.map(({ title, ...e },i) =>
-  <Rating
+  ratings_map.map(({ title, ...e },i) =>
+    <Rating
+      key={i}
       style={{ width: '400px' }}
       { ...e }
       asCard
-      key={i}
     />
-		  )
+  )
 )
 
 export const EmptyStars = () => (
   ratings_map.map(( e ,i) =>
     <Rating
+      key={i}
       emptyStars
       style={{ width: '400px' }}
       { ...e }
       asCard
-      key={i}
     />
   )
 )
@@ -123,12 +123,12 @@ export const EmptyStars = () => (
 export const OnTen  = () => (
   ratings_map.map(({rating, ...e},i) =>
     <Rating
+      key={i}
       scale={ 10 }
       rating={ rating + 5 }
       style={{ width: '400px' }}
       { ...e }
       asCard
-      key={i}
     />
   )
 )
