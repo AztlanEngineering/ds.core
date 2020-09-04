@@ -37,7 +37,10 @@ export const Default = () =>
 
 export const Variants = () =>
   variants.map((e,i) =>
-    <Subtitle upper={ i % 2 == 1 }>
+    <Subtitle
+      key={i}
+      upper={ i % 2 == 1 }
+    >
       { e.text }
     </Subtitle>
   )

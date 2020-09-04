@@ -57,7 +57,20 @@ const Rating = ({
           {' '}
         </span>
         { [...Array(scale)].map((e,i) =>
-          i < rating ? <span className='yes'>S</span> : <span className='no'>{ noStarChar }</span>
+          i < rating ?
+            <span
+              key={i}
+              className='yes'
+            >
+              S
+            </span>
+	  :
+            <span
+              key={i}
+              className='no'
+            >
+              { noStarChar }
+            </span>
         ) }
       </p>
 
@@ -140,13 +153,13 @@ Rating.propTypes = {
   /**
    * Whether to displayremaining starts as "empty"
    */
-  emptyStars:PropTypes.boolean,
+  emptyStars:PropTypes.bool,
 
 
   /**
    * Whether the starts "shine"
    */
-  animated:PropTypes.boolean,
+  animated:PropTypes.bool,
 
   /**
    * The TEXT module
