@@ -41,6 +41,7 @@ export const Stroke = () => (
 export const Animated = () => (
   <>
     <SVG
+      key='1'
       height='200'
       width='200'
       target='engine'
@@ -48,6 +49,7 @@ export const Animated = () => (
       animated
     />
     <SVG
+      key='2'
       height='200'
       width='200'
       target='engine'
@@ -62,6 +64,7 @@ export const Animated = () => (
       }}
     />
     <SVG
+      key='3'
       height='200'
       width='200'
       target='engine'
@@ -79,25 +82,23 @@ export const Animated = () => (
 
 export const FillColors = () => (
   ALL_COLORS.map((e,i) =>
-    <>
+    <div key={i}>
       <span>{ e }</span>
       <SVG
-        key={i}
         height='200'
         width='200'
         target='engine'
         className={'x-' + e}
       />
-    </>
+    </div>
   )
 )
 
 export const StrokeColors = () => (
   ALL_COLORS.map((e,i) =>
-    <>
+    <div key={i}>
       <span>{ e }</span>
       <SVG
-        key={i}
         height='200'
         width='200'
         target='engine'
@@ -105,12 +106,13 @@ export const StrokeColors = () => (
         anim
         className={'y-' + e}
       />
-    </>
+    </div>
   )
 )
 
 export const IsoTest = () => (
   <SVG
+    key='2'
     height='512'
     width='512'
     sprite='/sprite-iso.svg'

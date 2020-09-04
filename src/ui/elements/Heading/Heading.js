@@ -81,7 +81,7 @@ const Heading = ({
           className={
             (subtitleClassName ? ' ' + subtitleClassName : '')
           }
-    style={ subtitleStyle }
+          style={ subtitleStyle }
           { ...subtitleProps }
         >
           { subtitle }
@@ -158,9 +158,9 @@ Heading.propTypes = {
 
   /**
    * The node to display the label with
-   */
+  */
   labelAs:PropTypes.oneOfType([
-    PropTypes.string,
+    PropTypes.func,
     PropTypes.object
   ]),
 

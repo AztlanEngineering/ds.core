@@ -89,6 +89,7 @@ export const WithSubtitle = () =>(
 export const As = () =>
   variants.map((e,i) =>
     <Heading
+      key={i}
       headingAs={ e.as }
       subtitle={ e.sub }
       heading={ e.title }
@@ -99,6 +100,7 @@ export const As = () =>
 export const Alignment = () =>
   variants.map((e,i) =>
     <Heading
+      key={i}
       headingAs='h2'
       subtitle={ e.sub }
       heading={ e.title }
@@ -109,6 +111,7 @@ export const Alignment = () =>
 export const Colors = () =>
   ALL_COLORS.map((e,i) =>
     <Heading
+      key={i}
       headingAs='h3'
       subtitle={ variants[3].sub }
       className='mu u2 uc'
@@ -120,6 +123,7 @@ export const Colors = () =>
 export const StrokeColors = () =>
   ALL_COLORS.map((e,i) =>
     <Heading
+      key={i}
       headingAs='h1'
       subtitle={ variants[3].sub }
       className={ 'mu u2 uc ' +(i % 2 == 0 ? 'tu' : '') }
@@ -131,6 +135,7 @@ export const StrokeColors = () =>
 export const WithLabel = () =>
   variants.map((e,i) =>
     <Heading
+      key={i}
       className='mvu u4'
       headingAs={ 'h1' }
       subtitle={ e.sub }
@@ -152,6 +157,7 @@ export const LabelAs = () =>{
 
     variants.slice(0,2).map((e,i) =>
       <Heading
+        key={i}
         className='mvu u4'
         headingAs={ 'h2' }
         labelAs={ LabelWrapper }

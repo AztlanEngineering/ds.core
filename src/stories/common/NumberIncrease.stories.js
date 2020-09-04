@@ -92,19 +92,19 @@ export const Variants = () =>(
 )
 
 export const WithSuffix = () =>(
-  <>
+  <div key='key'>
     <p>Num 100 | Duration : 1000</p>
     <NumberIncrease
       number={100}
       duration={1000}
       suffix={ 'km' }
     />
-  </>
+  </div>
 )
 
 export const WithSuffixClass = () => (
   variants.map((e,i) =>
-    <>
+    <div key={i}>
       <p>
         Num
         { e.number }
@@ -120,7 +120,7 @@ export const WithSuffixClass = () => (
         className='s2 ks'
         suffixClassName={ i % 2 == 0 ? 'c-x x-red' : 'c-x x-green' }
       />
-    </>
+    </div>
   )
 )
 

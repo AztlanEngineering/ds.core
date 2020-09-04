@@ -55,13 +55,31 @@ export const Default = () => {
 
   return (
     <SiteContextProvider config={ config }>
-      <Footer>
-        <Footer.Main className='b-y y-yellow uc sm-ul'>
+      <Footer key='1'>
+        <Footer.Main
+          key='2'
+          className='b-y y-yellow uc sm-ul'
+        >
           { faker.lorem.paragraph() }
         </Footer.Main>
-        <div className='col1 b-y y-red uc sm-ul'>{ faker.lorem.paragraph() }</div>
-        <div className='col3 b-y y-blue uc sm-ul'>{ faker.lorem.paragraph() }</div>
-        <div className='col2 b-y y-green uc sm-ul'>{ faker.lorem.paragraph() }</div>
+        <div
+          key='3'
+          className='col1 b-y y-red uc sm-ul'
+        >
+          { faker.lorem.paragraph() }
+        </div>
+        <div
+          key='4'
+          className='col3 b-y y-blue uc sm-ul'
+        >
+          { faker.lorem.paragraph() }
+        </div>
+        <div
+          key='5'
+          className='col2 b-y y-green uc sm-ul'
+        >
+          { faker.lorem.paragraph() }
+        </div>
       </Footer>
     </SiteContextProvider>
   )
