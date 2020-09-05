@@ -88,6 +88,7 @@ const Debug = ({
       <Button.Group stretch='horizontal'>
         { actions.map((e ,i)=>
           <Button
+            key={i}
             className={
               [
               //styles[baseClassName],

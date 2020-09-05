@@ -20,7 +20,9 @@ export default {
 
 export const Default = () => (
   <>
-    <PageProgressBar style={{ position: 'fixed', top: '0', left: '0' }}/>
+    <PageProgressBar
+      style={{ position: 'fixed', top: '0', left: '0' }}
+    />
     <div
       dangerouslySetInnerHTML={{ __html: TEXT }}
       style={{ marginTop: '200px' }}
@@ -34,14 +36,14 @@ export const ContentId = () => (
       style={{ position: 'fixed', top: '0', left: '0' }}
       spyOn='txt'
     />
-    <h2 className='c-black'>We spy on the blue text</h2>
+    <h2 className='c-black'>We spy on the italic text</h2>
     <div
       dangerouslySetInnerHTML={{ __html: TEXT }}
       style={{ marginTop: '200px' }}
     />
     <div
       id='txt'
-      className='x-blue c-x'
+      className='ti'
     >
       <span dangerouslySetInnerHTML={{__html: TEXT_XS}}></span>
       <span dangerouslySetInnerHTML={{__html: TEXT_XS}}></span>
@@ -60,14 +62,14 @@ export const InitialId = () => (
       style={{ position: 'fixed', top: '0', left: '0' }}
       initializeAt='txt'
     />
-    <h2 className='c-black'>We Initialize at the blue text</h2>
+    <h2 className='c-black'>We Initialize at the italic text</h2>
     <div
       dangerouslySetInnerHTML={{ __html: TEXT_XS }}
       style={{ marginTop: '200px' }}
     />
     <div
       id='txt'
-      className='x-blue c-x'
+      className='ti'
     >
       <span dangerouslySetInnerHTML={{__html: TEXT_XS}}></span>
       <span dangerouslySetInnerHTML={{__html: TEXT_XS}}></span>
@@ -91,14 +93,14 @@ export const Color = () => (
       initializeAt='txt'
       rectClassName='x-green'
     />
-    <h2 className='c-black'>We Initialize at the blue text</h2>
+    <h2 className='c-black'>We Initialize at the italic text</h2>
     <div
       dangerouslySetInnerHTML={{ __html: TEXT_XS }}
       style={{ marginTop: '200px' }}
     />
     <div
       id='txt'
-      className='x-blue c-x'
+      className='ti'
     >
       <span dangerouslySetInnerHTML={{__html: TEXT_XS}}></span>
       <span dangerouslySetInnerHTML={{__html: TEXT_XS}}></span>
@@ -127,13 +129,16 @@ export const Gradient = () => (
         ]
       }
     />
-    <h2 className='c-black'>We Initialize at the blue text</h2>
+    <h2 className='c-black'>We Initialize at the italic text</h2>
     <div
       dangerouslySetInnerHTML={{ __html: TEXT_XS }}
       style={{ marginTop: '200px' }}
       className='b-off-white'
     />
-    <div id='txt'>
+    <div
+      id='txt'
+      className='ti'
+    >
       <span dangerouslySetInnerHTML={{__html: TEXT_XS}}></span>
       <span dangerouslySetInnerHTML={{__html: TEXT_XS}}></span>
       <span dangerouslySetInnerHTML={{__html: TEXT_XS}}></span>
@@ -162,7 +167,7 @@ export const StrokeWidth = () => (
         ]
       }
     />
-    <h2 className='c-black'>We Initialize at the blue text</h2>
+    <h2 className='c-black'>We Initialize at the italic text</h2>
     <div
       dangerouslySetInnerHTML={{ __html: TEXT_XS }}
       style={{ marginTop: '200px' }}
@@ -170,7 +175,7 @@ export const StrokeWidth = () => (
     />
     <div
       id='txt'
-      className='x-blue cx'
+      className='ti'
     >
       <span dangerouslySetInnerHTML={{__html: TEXT_XS}}></span>
       <span dangerouslySetInnerHTML={{__html: TEXT_XS}}></span>
