@@ -46,6 +46,8 @@ const DotInfo = ({
         [
           baseClassName,
           (typeof boolean === 'boolean') && (boolean ? trueClassName : falseClassName), 
+          (typeof boolean === 'boolean') && (boolean ? 'true' : 'false'), 
+          (typeof boolean === 'boolean') && 'bool', 
           className
         ].filter(e => e).join(' ')
       }
