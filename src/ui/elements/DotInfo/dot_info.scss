@@ -13,4 +13,10 @@ $circleSize:0.9em;
     width: $circleSize;
     height: $circleSize;
   }
+  &.bool.false {
+    .subtitle {
+      color:var(--metadata);
+      text-decoration:line-through;
+    }
+  }
 }
