@@ -185,6 +185,8 @@ $iconTransitionTime:0.3s;
 
     &:not(.vrt) {
       & > a + a,
+      & > a + .button,
+      & > .button + a,
       .button + .button {
         margin-left: 0.25rem;
       }
@@ -192,6 +194,8 @@ $iconTransitionTime:0.3s;
 
     &.vrt {
       & > a + a,
+      & > a + .button,
+      & > .button + a,
       .button + .button {
         margin-top: 0.25rem;
       }
