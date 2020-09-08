@@ -35,6 +35,7 @@ const DotInfo = ({
   subtitleUpper,
 
   boolean,
+  booleanStrike,
   trueClassName,
   falseClassName
 }) => {
@@ -46,8 +47,9 @@ const DotInfo = ({
         [
           baseClassName,
           (typeof boolean === 'boolean') && (boolean ? trueClassName : falseClassName), 
-          (typeof boolean === 'boolean') && (boolean ? 'true' : 'false'), 
+          (typeof boolean === 'boolean') && (boolean ? 'true' : 'false'),
           (typeof boolean === 'boolean') && 'bool', 
+          booleanStrike && 'strike',
           className
         ].filter(e => e).join(' ')
       }
@@ -125,12 +127,18 @@ DotInfo.propTypes = {
    * A boolean to set the circle color to 
    */
   boolean:PropTypes.bool,
+
+  /**
+   * Whether to strike the text if the boolean value is false
+   */
+  booleanStrike:PropTypes.bool,
 }
 
 DotInfo.defaultProps = {
   subtitleUpper:true,
   trueClassName:'y-success',
-  falseClassName:'y-error'
+  falseClassName:'y-error',
+  booleanStrike:true
 }
 
 export default DotInfo

@@ -253,5 +253,10 @@ $iconTransitionTime:0.3s;
     > :last-child .button, {
       border-radius: var(--rb);
     }
+
+    > :last-child:first-child, 
+    > :last-child:first-child .button{
+      border-radius: var(--r);
+    }
   }
 }

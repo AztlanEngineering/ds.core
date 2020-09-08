@@ -41,9 +41,15 @@ const Shortener = ({
   limit,
   separator,
   min,
+
+  readMore,
+  countLetters,
 }) => {
 
   const [displayFull, setDisplayFull] = useState(false)
+
+  const excerpt = countLetters ? text.slice(0, limit) : text.split(separator).slice(0, limit).join(separator)
+  const doShorten = countLetters ? text.length > limit : text.split(separator).length > limit
 
   return (
     <Element
@@ -57,25 +63,28 @@ const Shortener = ({
       id={ id }
       style={ style }
     >
-      { text && (!displayFull && (text.split(separator).length > limit)) ?
+      { (text && !displayFull && doShorten) ?
         <>
-          { text.split(separator).slice(0, limit).join(separator) }{ '... ' }
-          <a
-            href='#'
-            onClick={ (e) => {
-              e.preventDefault()
-              e.stopPropagation()
-              setDisplayFull(true) }
-            }
-          >
-            { min ?
-              <FormattedMessage {...messages.show} /> :
-            <FormattedMessage {...messages.readMore} />
-            }
-          </a>
+          { excerpt }
+          { '... ' }
+          { readMore &&
+            <a
+              href='#'
+              onClick={ (e) => {
+                e.preventDefault()
+                e.stopPropagation()
+                setDisplayFull(true) }
+              }
+            >
+              { min ?
+                <FormattedMessage {...messages.show} /> :
+                <FormattedMessage {...messages.readMore} />
+              }
+            </a>}
         </>:
         text
       }
+
     </Element>
   )}
 
@@ -119,11 +128,20 @@ Shortener.propTypes = {
    */
   separator:PropTypes.string.isRequired,
 
-
   /**
    * Whether the shortener style is minimal. ATM is only gives a shorter message
    */
   min:PropTypes.bool,
+
+  /**
+   * Whether to display a read more
+   */
+  readMore:PropTypes.bool,
+
+  /**
+   * Whether to count letters instead of using a split
+   */
+  countLetters:PropTypes.bool,
 
   /*
   : PropTypes.shape({
@@ -138,10 +156,12 @@ Shortener.propTypes = {
 }
 
 Shortener.defaultProps = {
-  as   :'span',
-  separator:' ',
-  limit:20,
-  min:false,
+  as          :'span',
+  separator   :' ',
+  limit       :20,
+  min         :false,
+  readMore    :true,
+  countLetters:false
 
   /* height:'2.2em',
      as:'p', */
