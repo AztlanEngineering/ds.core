@@ -9,13 +9,13 @@ Classes :
 
 .keys {
   .key {
-    border: 1px solid var(--x, var(--subtitle));
+    border: 1px solid var(--z, var(--x, var(--subtitle)));
     border-radius: var(--r);
     padding-left:.2em;
     height: 2em;
     width: 2em;
     display:inline-block;
-    color:var(--x, var(--subtitle));
+    color:var(--z, var(--x, var(--subtitle)));
 
     & + .key {
       margin-left: .15em;

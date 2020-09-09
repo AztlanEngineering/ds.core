@@ -9,6 +9,7 @@ $paddingSide:0.5em;
 $paddingBottom:0.4em;
 $padding:$paddingTop $paddingSide $paddingBottom;
 $border-radius:$paddingTop + $paddingBottom + 1em;
+$circleMinDimension:$border-radius;
 $fontFamily:var(--font-d) !default;
 $verticalAlignInHeadings:top;
 $marginBottom:0.3em;
@@ -30,6 +31,9 @@ $line-height:.9em;
 
   &.circle {
     border-radius: $border-radius;
+    min-width:$circleMinDimension;
+    min-height:$circleMinDimension;
+
   }
 
   &.i {

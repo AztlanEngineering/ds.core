@@ -185,6 +185,8 @@ $iconTransitionTime:0.3s;
 
     &:not(.vrt) {
       & > a + a,
+      & > a + .button,
+      & > .button + a,
       .button + .button {
         margin-left: 0.25rem;
       }
@@ -192,6 +194,8 @@ $iconTransitionTime:0.3s;
 
     &.vrt {
       & > a + a,
+      & > a + .button,
+      & > .button + a,
       .button + .button {
         margin-top: 0.25rem;
       }
@@ -248,6 +252,11 @@ $iconTransitionTime:0.3s;
     > :last-child,
     > :last-child .button, {
       border-radius: var(--rb);
+    }
+
+    > :last-child:first-child, 
+    > :last-child:first-child .button{
+      border-radius: var(--r);
     }
   }
 }
