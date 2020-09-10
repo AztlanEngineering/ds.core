@@ -10,7 +10,7 @@ Classes :
 .popup {
   display: inline-block;
   position: absolute;
-  background: var(--y, blue);
+  //background: var(--y, blue);
   //overflow-y:scroll;
 
   &:not(.visible) {
@@ -20,19 +20,19 @@ Classes :
   &.left {
     top: 0;
     right: 100%;
-    background: grey;
+    //background: grey;
   }
 
   &.right {
     top: 0;
     left: 100%;
-    background: yellow;
+    //background: yellow;
   }
 
   &.top {
     bottom: 100%;
     left: 0;
-    background: red;
+    //background: red;
   }
 
   &.bottom {

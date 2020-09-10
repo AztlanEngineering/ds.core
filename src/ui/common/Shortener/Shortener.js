@@ -34,7 +34,7 @@ const Shortener = ({
   id,
   className,
   style,
-  children:text,
+  children,
 
   as:Element,
 
@@ -47,6 +47,8 @@ const Shortener = ({
 }) => {
 
   const [displayFull, setDisplayFull] = useState(false)
+
+  const text = children || ''
 
   const excerpt = countLetters ? text.slice(0, limit) : text.split(separator).slice(0, limit).join(separator)
   const doShorten = countLetters ? text.length > limit : text.split(separator).length > limit
