@@ -24,7 +24,7 @@ const JumpButton = ({
       { ...props }
       disabled={ disabled }
     >
-    …
+      …
     </Button>
   )}
 
@@ -32,7 +32,7 @@ JumpButton.propTypes = {
   /**
    * The JSX-Written, css styles to apply to the element.
    */
-  disabled: PropTypes.bool,
+  disabled:PropTypes.bool,
 }
 
 

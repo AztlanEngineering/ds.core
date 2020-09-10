@@ -36,7 +36,7 @@ ArrowButton.propTypes = {
   /**
    *  The children JSX
    */
-  children: PropTypes.node,
+  children:PropTypes.node,
 
   /**
    * Which side is the button
@@ -47,7 +47,7 @@ ArrowButton.propTypes = {
   /**
    * The height of the element
    */
-  pageNumber: PropTypes.number.isRequired,
+  pageNumber:PropTypes.number.isRequired,
 }
 
 /*

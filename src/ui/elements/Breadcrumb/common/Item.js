@@ -36,14 +36,14 @@ const Item = ({
   else {
     Wrapper = Link
     wrapper_args['to'] = to
-  } 
+  }
 
   const childIsMessage = children && children.defaultMessage && true
   const userNameIsMessage = userName && userName.defaultMessage && true
 
   const passedChildren = childIsMessage ? intl.formatMessage(children) : children
   const passedName = userNameIsMessage ? intl.formatMessage(userName) : userName
-  
+
 
   const name = passedName || passedChildren
 
@@ -68,7 +68,7 @@ const Item = ({
         { name && <meta
           itemProp='name'
           content={ name }
-                      />}
+        />}
         { position && <meta
           itemProp='position'
           content={ position }
@@ -110,16 +110,6 @@ Item.propTypes = {
     PropTypes.node
   ]),
   //as: PropTypes.string,
-
-  /**
-   * The height of the element
-   */
-  height:PropTypes.string,
-
-  /**
-   * The width of the element
-   */
-  width:PropTypes.string,
 
   /**
    * The Schema position (https://developers.google.com/search/docs/data-types/breadcrumb)
