@@ -34,7 +34,7 @@ PageNumberButton.propTypes = {
   /**
    * the number of the page
    */
-  pageNumber: PropTypes.number.isRequired,
+  pageNumber:PropTypes.number.isRequired,
 
 }
 

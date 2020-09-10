@@ -81,11 +81,6 @@ Image.propTypes = {
   alt:PropTypes.string.isRequired,
 
   /**
-   * The JSX-Written, css styles to apply to the child image.
-   */
-  style:PropTypes.object,
-
-  /**
    * the objectFit to be passed to the css. This is important for how the image is viewed in a responsive environment
    */
   objectFit:PropTypes.oneOf([
@@ -103,7 +98,7 @@ Image.propTypes = {
 }
 
 Image.defaultProps = {
-  objectFit:'cover',
+  objectFit     :'cover',
   objectPosition:'center center'
   /* height:'2.2em',
      as:'p', */

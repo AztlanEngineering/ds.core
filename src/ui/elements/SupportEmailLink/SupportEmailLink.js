@@ -78,15 +78,6 @@ SupportEmailLink.propTypes = {
   ]),
   //as: PropTypes.string,
 
-  /**
-   * The height of the element
-   */
-  height:PropTypes.string,
-
-  /**
-   * The width of the element
-   */
-  width:PropTypes.string,
   /*
   : PropTypes.shape({
     id: PropTypes.string.isRequired,
