@@ -49,6 +49,7 @@ const Item = ({
     isOpen,
     toggle,
     toggleStyle,
+    min,
     /* open,
        close */
   } = useAccordion(
@@ -57,6 +58,66 @@ const Item = ({
   )
 
   const isOpenOrBackend = isOpen || isBackend
+
+  if (min) return (
+    <div
+      className={
+        [
+        //styles[baseClassName],
+          baseClassName,
+          'min',
+          className
+        ].filter(e => e).join(' ')
+      }
+      id={ id }
+      style={ style }
+    >
+      <header
+        className='pointer'
+        onClick={ toggle }
+      >
+        <div className={ C.title }>
+        { title }
+        </div>
+        <div className='icon s-1 k-s'>
+          { toggleStyle === 'caret' ?
+            <AnimatedVCaret
+              height='2em'
+              strokeWidth='13'
+              listenerId={ id + 'Title' }
+              active={ isOpenOrBackend }
+              style={{'--z': 'var(--dark-subtitle)'}}
+              //ding-mul
+            //    className='c-on-y'
+            />
+            :
+            <span
+              className='yb mv-v v0 h2 c-x x-subtitle'
+            >
+              { isOpenOrBackend ?
+                '-':'+'
+              }
+            </span>
+          }
+        </div>
+
+      </header>
+      <main
+        className={
+          [
+            !isOpenOrBackend && 'h',
+            C.content,
+            's0 k-s',
+            toggleStyle
+          ].filter(e => e).join(' ')
+        }
+      >
+        { children }
+      </main>
+
+    </div>
+
+  )
 
   return (
     <SimpleCard
@@ -92,7 +153,8 @@ const Item = ({
               strokeWidth='13'
               listenerId={ id + 'Title' }
               active={ isOpenOrBackend }
-              style={{'--z': 'var(--dark-subtitle)'}}ding-mul
+              style={{'--z': 'var(--dark-subtitle)'}}
+              //ding-mul
             //    className='c-on-y'
             />
             :
@@ -106,19 +168,19 @@ const Item = ({
           }
         </div>
       </SimpleCard.Section>
-        <SimpleCard.Section
-          hidden={ !isOpenOrBackend }
-          className={
-            [
-              !isOpenOrBackend && 'h',
-              C.content,
-              's0 k-s',
-              toggleStyle
-            ].filter(e => e).join(' ')
-          }
-        >
-          { children }
-        </SimpleCard.Section>
+      <SimpleCard.Section
+        hidden={ !isOpenOrBackend }
+        className={
+          [
+            !isOpenOrBackend && 'h',
+            C.content,
+            's0 k-s',
+            toggleStyle
+          ].filter(e => e).join(' ')
+        }
+      >
+        { children }
+      </SimpleCard.Section>
     </SimpleCard>
   )}
 

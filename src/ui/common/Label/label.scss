@@ -10,7 +10,7 @@ $paddingBottom:0.4em;
 $padding:$paddingTop $paddingSide $paddingBottom;
 $border-radius:$paddingTop + $paddingBottom + 1em;
 $circleMinDimension:$border-radius;
-$fontFamily:var(--font-d) !default;
+//$fontFamily:var(--font-d) !default;
 $verticalAlignInHeadings:top;
 $marginBottom:0.3em;
 $font-weight:bold;
@@ -26,7 +26,7 @@ $line-height:.9em;
   vertical-align: $vertical-align;
   color: var(--on-x, var(--black));
   line-height:$line-height;
-  font-family: $fontFamily;
+  //font-family: $fontFamily;
   font-weight: $font-weight;
 
   &.circle {

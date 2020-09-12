@@ -55,7 +55,8 @@ export const Default = () => {
         subtitle={ faker.lorem.sentence() }
             >
       </Heading>,
-      children:<p>{ faker.lorem.paragraph(6) }</p>
+      children:<p>{ faker.lorem.paragraph(6) }</p>,
+      className:'y-background b-light-y'
     }
   }
   const items = [
@@ -73,7 +74,6 @@ export const Default = () => {
       { items.map((el, i) =>
         <Accordion.Item
           { ...el }
-          className='x-subtitle'
           id={ 'acc' + i }
           key={ i }
         />
@@ -89,10 +89,49 @@ export const PlusMinus = () => {
   const generateItem = () => {
     return {
       title:<Heading
-        headingClassName='h2 c-on-y'
+        headingClassName='h5 c-on-y'
         heading={ faker.lorem.sentence()}
         subtitle={ faker.lorem.sentence() }
         subtitleClassName='x-subtitle c-light-x'
+      >
+      </Heading>,
+      children:<p className='c-x'>{ faker.lorem.paragraph(6) }</p>,
+      className:'y-background b-light-y'
+    }
+  }
+  const items = [
+    generateItem(),
+    generateItem(),
+    generateItem(),
+    generateItem()
+  ]
+
+  return(
+    <Accordion
+      className='s0 k-s y-white x-subtitle'
+      toggleStyle='plus'
+    >
+      <Accordion.Debug/>
+      { items.map((el, i) =>
+        <Accordion.Item
+          { ...el }
+          id={ 'acc' + i }
+          key={ i }
+        />
+      ) }
+    </Accordion>
+  )
+}
+
+export const Min = () => {
+
+  const generateItem = () => {
+    return {
+      title:<Heading
+        headingClassName='h2 c-on-y'
+        heading={ faker.lorem.sentence()}
+        //subtitle={ faker.lorem.sentence() }
+        //subtitleClassName='x-subtitle c-light-x'
       >
       </Heading>,
       children:<p className='c-x'>{ faker.lorem.paragraph(6) }</p>
@@ -109,6 +148,7 @@ export const PlusMinus = () => {
     <Accordion
       className='s0 k-s y-white x-subtitle'
       toggleStyle='plus'
+      min
     >
       <Accordion.Debug/>
       { items.map((el, i) =>
