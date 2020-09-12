@@ -18,7 +18,8 @@ export default (
     openItems,
     toggleStyle,
     register,
-    unregister
+    unregister,
+    min
   } = useContext(AccordionContext)
 
   const isOpen = openItems.includes(id)
@@ -56,6 +57,7 @@ export default (
     close,
     toggle,
     toggleStyle,
-    isOpen
+    isOpen,
+    min
   }
 }

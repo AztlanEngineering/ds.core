@@ -33,6 +33,7 @@ const Card = ({
 
   basic,
   simple,
+  compact,
   selectable,
   active,
   onClick,
@@ -54,11 +55,11 @@ const Card = ({
     </span>
 
   const cardProps = {
-
     active,
     selectable,
     basic,
     simple,
+    compact,
     onClick,
   }
 
@@ -86,7 +87,8 @@ const Card = ({
           { ...cardProps }
           className={
             [
-              backFace && 'front-face',
+              //backFace && 'front-face',
+              'front-face',
               className
             ].filter(e => e).join(' ')
           }
@@ -183,6 +185,11 @@ Card.propTypes = {
    * Whether to use a "simple" style
    */
   simple:PropTypes.bool,
+
+  /**
+   * Whether to apply compact padding (this will have an effect on `Card.Section` only)
+   */
+  compact:PropTypes.bool,
 
   /**
    * Whether to apply the "basic" style

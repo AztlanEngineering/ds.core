@@ -52,13 +52,31 @@ $icon-width:2em;
     .content {
       &.plus {
         & > * {
-          padding-left: calc((#{$icon-width} * 3 / 2)/var(--s, 1)) ;
+          padding-left: calc((#{$icon-width} * 3 / 2)/var(--s, 1));
         }
       }
     }
 
     & + .card {
       margin-top: .2em;
+    }
+  }
+
+  .min {
+    header {
+      align-items: baseline;
+      display: flex;
+
+      .title {
+        flex-grow: 99;
+      }
+
+      .icon {
+        margin-left: .5em;
+      }
+    }
+    & + .min {
+      margin-top: 1em;
     }
   }
 }

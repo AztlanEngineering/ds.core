@@ -23,6 +23,7 @@ const Button = React.forwardRef(({
 
   basic,
   simple,
+  compact,
   in3d,
 
   icon,
@@ -51,6 +52,7 @@ const Button = React.forwardRef(({
           simple && C.simple,
           (simple && !disabled) && C.simpleHover,
           //circle && C.circle,
+          compact && C.compact,
           basic && C.basic,
           (basic && !disabled) && C.basicHover,
           in3d && C.in3d,

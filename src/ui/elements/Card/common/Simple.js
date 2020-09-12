@@ -37,12 +37,12 @@ const Simple = ({
 
   active,
   selectable,
+  compact,
   basic,
   simple,
 
   ...otherProps
 }) => {
-
 
   return (
     <Wrapper
@@ -53,6 +53,7 @@ const Simple = ({
           selectable && C.selectable,
           basic && C.basic,
           simple && C.simple,
+          compact && C.compact,
           className
         ].filter(e => e).join(' ')
       }
@@ -101,6 +102,11 @@ Simple.propTypes = {
    * Whether to use a "simple" style
    */
   simple:PropTypes.bool,
+
+  /**
+   * Whether to apply compact padding (this will have an effect on `Card.Section` only)
+   */
+  compact:PropTypes.bool,
 
   /**
    * Whether to apply the "basic" style

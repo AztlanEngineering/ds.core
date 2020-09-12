@@ -8,6 +8,7 @@ $transitionDuration:.2s;
 $selectionAnimationHeight:.1em;
 $transformHoverScale:1.02;
 $section-padding:1.4em;
+$compact-section-padding:$section-padding/2;
 $shadow:var(--shadow);
 $shadow-hover:var(--shadow-hover, var(--shadow));
 
@@ -83,17 +84,7 @@ $shadow-hover:var(--shadow-hover, var(--shadow));
   & > .section.visible {
     z-index: 0;
 
-    /*
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    p,
-    span, {
-      color: var(--x, var(--y-on));
-    } */
-    &.img {
+      &.img {
       & > figure,
       & > img {
         width: 100%;
@@ -114,6 +105,30 @@ $shadow-hover:var(--shadow-hover, var(--shadow));
       &:first-child:last-child {
         padding-bottom: $section-padding;
         padding-top: $section-padding;
+      }
+    }
+
+    &:last-of-type {
+      //flex-grow:99;
+    }
+  }
+
+  &.compact > .section.visible {
+
+    &:not(.img) {
+      padding: $compact-section-padding;
+
+      &:not(:first-of-type) {
+        padding-top: $compact-section-padding / 2;
+      }
+
+      &:not(:last-of-type) {
+        padding-bottom: $compact-section-padding / 2;
+      }
+
+      &:first-child:last-child {
+        padding-bottom: $compact-section-padding;
+        padding-top: $compact-section-padding;
       }
     }
 

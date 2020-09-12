@@ -5,43 +5,56 @@ Classes :
 
 */
 
-$paddingSide:0.8em;
-$paddingTop:0.5em;
-$paddingBottom:0.55em;
+$paddingSide:.6em;
+$paddingTop:.5em;
+$paddingBottom:.55em;
 $padding:$paddingTop $paddingSide $paddingBottom;
+$compact-size-factor:.7;
+$compact-padding-side:$compact-size-factor * $paddingSide;
+$compact-padding-top:$compact-size-factor * $paddingTop;
+$compact-padding-bottom:$compact-size-factor * $paddingBottom;
+$compact-padding:$compact-padding-top $compact-padding-side $compact-padding-bottom;
 $fontFamily:var(--fp);
 $fontWeight:bold;
 $willChange:"";
 $tapColor:transparent;
 $lineHeight:1.3em;
-$iconOpacity:0.9;
-$iconOpacityHover:0.96;
-$iconBackOpacity:0.2;
-$iconBackOpacityHover:0.4;
+$iconOpacity:.9;
+$iconOpacityHover:.96;
+$iconBackOpacity:.2;
+$iconBackOpacityHover:.4;
 $iconBackWidth:2em;
-$iconPadding:$paddingTop 0.5em $paddingBottom;
-$iconTransitionMovement:0.25em;
-$iconTransitionTime:0.3s;
+$iconPadding:$paddingTop .5em $paddingBottom;
+$iconTransitionMovement:.25em;
+$iconTransitionTime:.3s;
 
 .button {
-  position: relative;
-  outline: none;
+  //height:min-content;
+  background: var(--x, var(--metadata));
   border: 0;
   border-radius: var(--r);
-
-  background: var(--x, var(--metadata));
-  cursor: pointer;
-  overflow: hidden;
-  line-height: $lineHeight;
   color: var(--on-x, var(--paragraph));
+  cursor: pointer;
   font-family: $fontFamily;
   font-weight: $fontWeight;
+  line-height: $lineHeight;
+  outline: none;
+  overflow: hidden;
+  position: relative;
   -webkit-tap-highlight-color: $tapColor;
   user-select: none;
   will-change: $willChange;
 
   &:not(.i) {
     padding: $padding;
+
+    &.compact {
+      padding: $compact-padding;
+
+      :not(.g-button) > & {
+        height: $lineHeight + $compact-padding-top + $compact-padding-bottom;
+      }
+    }
   }
 
   :not(.g-button) > & {
@@ -51,8 +64,8 @@ $iconTransitionTime:0.3s;
 
   &:disabled {
     background: var(--light-x, var(--dark-white));
-    cursor: unset;
     color: var(--on-x, var(--dark-grey));
+    cursor: unset;
   }
 
   &:not(:disabled) {
@@ -68,10 +81,18 @@ $iconTransitionTime:0.3s;
 
   &.il {
     padding-left: $paddingSide + $iconBackWidth;
+
+    &.compact {
+      padding-left: $compact-padding-side + $iconBackWidth;
+    }
   }
 
   &.ir {
     padding-right: $paddingSide + $iconBackWidth;
+
+    &.compact {
+      padding-right: $compact-padding-side + $iconBackWidth;
+    }
   }
 
   &.ic  {
@@ -81,31 +102,30 @@ $iconTransitionTime:0.3s;
   &.ir,
   &.il {
     i {
+      bottom: 0;
+      line-height: $lineHeight;
+      opacity: $iconOpacity;
+      padding: $iconPadding;
       position: absolute;
       top: 0;
-      bottom: 0;
-      opacity: $iconOpacity;
-      z-index: 0;
-      padding: $iconPadding;
-      line-height: $lineHeight;
       transition: all $iconTransitionTime;
+      z-index: 0;
 
       &::before {
+        bottom: 0;
+        content: " ";
         position: absolute;
         top: 0;
-        bottom: 0;
-        z-index: -1;
-        width: $iconBackWidth;
-        content: " ";
         transition: all $iconTransitionTime;
+        width: $iconBackWidth;
+        z-index: -1;
       }
-
     }
 
     &:not(.simple) i {
       &::before {
-        opacity: $iconBackOpacity;
         background: var(--white);
+        opacity: $iconBackOpacity;
       }
     }
 
@@ -188,7 +208,7 @@ $iconTransitionTime:0.3s;
       & > a + .button,
       & > .button + a,
       .button + .button {
-        margin-left: 0.25rem;
+        margin-left: .25rem;
       }
     }
 
@@ -197,7 +217,7 @@ $iconTransitionTime:0.3s;
       & > a + .button,
       & > .button + a,
       .button + .button {
-        margin-top: 0.25rem;
+        margin-top: .25rem;
       }
     }
   }
@@ -224,6 +244,11 @@ $iconTransitionTime:0.3s;
     > :last-child,
     > :last-child .button, {
       border-radius: var(--rr);
+    }
+
+    > :last-child:first-child,
+    > :last-child:first-child .button {
+      border-radius: var(--r);
     }
   }
 
@@ -254,8 +279,8 @@ $iconTransitionTime:0.3s;
       border-radius: var(--rb);
     }
 
-    > :last-child:first-child, 
-    > :last-child:first-child .button{
+    > :last-child:first-child,
+    > :last-child:first-child .button {
       border-radius: var(--r);
     }
   }

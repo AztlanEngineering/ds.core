@@ -40,15 +40,16 @@ const DotInfo = ({
   falseClassName
 }) => {
 
+  const isBoolean = (typeof boolean === 'boolean') || boolean === null
 
   return (
     <div
       className={
         [
           baseClassName,
-          (typeof boolean === 'boolean') && (boolean ? trueClassName : falseClassName), 
-          (typeof boolean === 'boolean') && (boolean ? 'true' : 'false'),
-          (typeof boolean === 'boolean') && 'bool', 
+          isBoolean && (boolean ? trueClassName : falseClassName), 
+          isBoolean && (boolean ? 'true' : 'false'),
+          isBoolean && 'bool', 
           booleanStrike && 'strike',
           className
         ].filter(e => e).join(' ')

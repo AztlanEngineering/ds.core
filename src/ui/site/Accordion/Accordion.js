@@ -89,6 +89,7 @@ const Accordion = ({
   className,
   style,
   children,
+  min,
 
   as:Wrapper,
 
@@ -189,7 +190,8 @@ const Accordion = ({
         closeOne,
         closeAll,
         register,
-        unregister
+        unregister,
+        min
       }}
     >
       <Wrapper
@@ -239,6 +241,11 @@ Accordion.propTypes = {
   //as: PropTypes.string,
 
   /**
+   * Whether we display this in a minimal way
+   */
+  min:PropTypes.bool,
+
+  /**
    * The style of the accordion item
    */
   toggleStyle:PropTypes.oneOf(['plus', 'caret'])
@@ -256,7 +263,8 @@ Accordion.propTypes = {
 
 Accordion.defaultProps = {
   as         :'div',
-  toggleStyle:'caret'
+  toggleStyle:'caret',
+  min:false
   /* height:'2.2em',
      as:'p', */
 }
