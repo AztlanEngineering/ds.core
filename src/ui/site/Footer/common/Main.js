@@ -88,19 +88,25 @@ const Main = ({
   }, [cv.INSTAGRAM, cv.TWITTER, cv.FACEBOOK]
   )
 
-  const SocialsComp = useMemo(() => () => <ul 
-      className='inline'
+  const SocialsComp = useMemo(() => () => <ul
+    className='inline'
   >
     {socials.map(
-    (e) => 
-      <li>
-        <a href={ typeof e.url === 'string' ? e.url : intl.formatMessage(e.url.props) } rel='noreferrer nofollow' target='_blank'>{ e.name }</a>
-      </li>
-  )}
+      (e, i) =>
+        <li key={i}>
+          <a
+            href={ typeof e.url === 'string' ? e.url : intl.formatMessage(e.url.props) }
+            rel='noreferrer nofollow'
+            target='_blank'
+          >
+            { e.name }
+          </a>
+        </li>
+    )}
   </ul>
 
   ,
-    [socials]
+  [socials]
   )
 
 
@@ -120,21 +126,21 @@ const Main = ({
     >
       <div className=''>
         <Link to={ cv.HOME_URL }>
-        <Heading
-          heading={ cv.SITE_NAME }
-          headingClassName='h3'
-          subtitle={
-            <SocialsComp/>
-          }
-        />
+          <Heading
+            heading={ cv.SITE_NAME }
+            headingClassName='h3'
+            subtitle={
+              <SocialsComp/>
+            }
+          />
         </Link>
       </div>
       { cv.SITE_DESCRIPTION &&
-      <div className="">
-        <p>
-          { cv.SITE_DESCRIPTION}
-        </p>
-      </div>
+        <div className=''>
+          <p>
+            { cv.SITE_DESCRIPTION}
+          </p>
+        </div>
       }
       { children }
     </div>
@@ -173,7 +179,7 @@ Main.propTypes = {
   /**
    * Override the site context
    */
-  overrides: PropTypes.object,
+  overrides:PropTypes.object,
 
   /**
    * A dictionnary of keys to override sitecontext
@@ -193,7 +199,7 @@ Main.propTypes = {
 
 Main.defaultProps = {
   overrides:{}
-  //height:'2.2em',
-  //as:'p',
+  /* height:'2.2em',
+     as:'p', */
 }
 export default Main

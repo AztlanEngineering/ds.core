@@ -36,7 +36,7 @@ export const Default = () => {
 
   return (
     <>
-      <div id>
+      <div>
         <InnerContent
           dangerouslySetInnerHTML={{ __html: TEXT_XS }}
         />
@@ -75,7 +75,7 @@ export const Order = () => {
 
   return (
     <>
-      <div id>
+      <div>
         <InnerContent
           dangerouslySetInnerHTML={{ __html: TEXT_XS }}
         />
