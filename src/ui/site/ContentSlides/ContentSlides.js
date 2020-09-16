@@ -181,7 +181,7 @@ ContentSlides.propTypes = {
     PropTypes.shape({
       id      :PropTypes.string.isRequired,
       title   :PropTypes.string.isRequired,
-      progress:PropTypes.string.isRequired,
+      progress:PropTypes.number.isRequired,
       location:PropTypes.string.isRequired,
     })
   ),
