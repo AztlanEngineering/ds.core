@@ -98,7 +98,7 @@ InlineLoader.propTypes = {
   /**
    * The height of the loader
    */
-  height:PropTypes.string,
+  height:PropTypes.string.isRequired,
 
   /**
    * The duration of the animation loop in seconds
@@ -122,6 +122,7 @@ InlineLoader.propTypes = {
 }
 
 InlineLoader.defaultProps = {
+  height:'1em',
   type:'bars',
 }
 
