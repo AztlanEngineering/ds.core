@@ -320,22 +320,22 @@ NavBar.propTypes = {
   /**
    *  The children JSX for the title. Takes prop `open` as a boolean
    */
-  TitleComponent:PropTypes.node,
+  TitleComponent:PropTypes.elementType,
 
   /**
    *  The children JSX for the footer. Takes prop `open` as a boolean
    */
-  FooterComponent:PropTypes.node,
+  FooterComponent:PropTypes.elementType,
 
   /**
    *  The children JSX for the footer. Takes prop `open` as a boolean
    */
-  ExtraContentComponent:PropTypes.node,
+  ExtraContentComponent:PropTypes.elementType,
 
   /**
    * A leader to display more advanced logic. Please give it .gc-content
    */
-  Leader:PropTypes.node,
+  Leader:PropTypes.elementType,
 
 
   /**
