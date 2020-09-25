@@ -17,6 +17,7 @@ const helmet_map = [
     render   :(v) =>
       <meta
         name='robots'
+        key='robots'
         content={ v || '"index, follow"'}
       />
   },
@@ -25,7 +26,7 @@ const helmet_map = [
   {
     variables:['title_tag', 'title'],
     render   :(v) =>
-      <title>{ v }</title>
+      <title key='title_tag'>{ v }</title>
   },
 
   {
@@ -34,6 +35,7 @@ const helmet_map = [
       <meta
         name='description'
         content={ v }
+        key='meta_description'
       />
   },
 
@@ -44,10 +46,12 @@ const helmet_map = [
         <link
           rel='canonical'
           href={`${c.SITE_CANONICAL}/${v}`}
+          key='canonical'
         /> :
         <link
           rel='canonical'
           href={v}
+          key='canonical'
         />
   },
 
@@ -57,6 +61,7 @@ const helmet_map = [
       <meta
         name='twitter:title'
         content={ v }
+        key='twitter_title'
       />
   },
 
@@ -66,6 +71,7 @@ const helmet_map = [
       <meta
         name='twitter:description'
         content={ v }
+        key='twitter_description'
       />
   },
 
@@ -76,6 +82,7 @@ const helmet_map = [
       <meta
         name='twitter:image'
         content={ v }
+        key='twitter_image'
       />
   },
 
@@ -85,6 +92,7 @@ const helmet_map = [
       <meta
         property='og:title'
         content={ v }
+        key='og_title'
       />
   },
 
@@ -94,6 +102,7 @@ const helmet_map = [
       <meta
         property='og:description'
         content={ v }
+        key='og_description'
       />
   },
 
@@ -104,6 +113,7 @@ const helmet_map = [
       <meta
         property='og:image'
         content={ v }
+        key='og_image'
       />
   },
 
@@ -114,6 +124,7 @@ const helmet_map = [
       <meta
         property='og:type'
         content={ v || 'article' }
+        key='og_type'
       />
   },
 
@@ -124,11 +135,13 @@ const helmet_map = [
         <meta
           property='og:url'
           content={`${c.SITE_CANONICAL}/${v}`}
+          key='og_url'
         />
         :
         <meta
           property='og:url'
           content={ v }
+          key='og_url'
         />
   },
 

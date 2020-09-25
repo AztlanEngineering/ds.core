@@ -129,8 +129,10 @@ const Main = ({
           <Heading
             heading={ cv.SITE_NAME }
             headingClassName='h3'
+            subtitleAs='div'
             subtitle={
-              <SocialsComp/>
+              socials.length ?
+                <SocialsComp/> : undefined
             }
           />
         </Link>
