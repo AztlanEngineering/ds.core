@@ -33,6 +33,7 @@ const Heading = ({
   labelProps,
 
   subtitle,
+  subtitleAs,
   subtitleClassName,
   subtitleStyle,
   subtitleProps,
@@ -78,6 +79,7 @@ const Heading = ({
 
       { subtitle &&
         <Subtitle
+          as={ subtitleAs }
           className={
             (subtitleClassName ? ' ' + subtitleClassName : '')
           }
