@@ -50,7 +50,7 @@ const DefaultTitleComponent = ({title, className, link, open,...otherProps}) => 
       {...otherProps}
     >
       <Link to={ HOME_URL }>
-        <p className='fh m-v tb s2 k-s'>{ SITE_NAME }</p>
+        <p className='fh m-v tb s2 k-s title'>{ SITE_NAME }</p>
       </Link>
     </div>
   )
