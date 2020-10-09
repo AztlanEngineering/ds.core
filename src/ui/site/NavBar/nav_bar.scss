@@ -47,6 +47,12 @@ Classes :
   .i-footer {
   }
 
+  .i-header {
+    .title {
+      white-space:nowrap;
+    }
+  }
+
   @include mixins.media($from:$sm-md) {
     grid-template-areas: "header content footer";
     grid-template-columns: min-content 1fr min-content;
