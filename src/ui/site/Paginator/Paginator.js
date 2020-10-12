@@ -49,6 +49,7 @@ const Paginator = ({
   spread,
 
   basic,
+  compact,
   stretch,
   getLink,
 
@@ -91,7 +92,8 @@ const Paginator = ({
                 iconSide='l'
                 icon={ leftIcon }
                 basic={ basic }
-                pageNumber={ 1 }
+                compact={ compact }
+                pageNumber={ page - 1 }
               >
                 <FormattedMessage {...previousMessage}/>
               </ArrowButton>
@@ -99,6 +101,7 @@ const Paginator = ({
               <PageNumberButton
                 pageNumber={ 1 }
                 basic={ basic }
+                compact={ compact }
               />
               <SpreadPageNumbersButtons
                 variation={ -1 }
@@ -106,6 +109,7 @@ const Paginator = ({
                 pageNumber={ page }
                 limit={ 1 }
                 basic={ basic }
+                compact={ compact }
               />
             </>
           }
@@ -114,6 +118,7 @@ const Paginator = ({
             className={ currentClassName || buttonClassName }
             pageNumber={ page }
             basic={ basic }
+            compact={ compact }
           />
 
           { page != totalPages &&
@@ -124,16 +129,19 @@ const Paginator = ({
                 pageNumber={ page }
                 limit={ totalPages }
                 basic={ basic }
+                compact={ compact }
               />
               <PageNumberButton
                 pageNumber={ totalPages }
                 basic={ basic }
+                compact={ compact }
               />
               <ArrowButton
                 iconSide='r'
                 icon={ rightIcon }
                 basic={ basic }
-                pageNumber={ totalPages }
+                compact={ compact }
+                pageNumber={ page + 1 }
               >
                 <FormattedMessage {...nextMessage}/>
               </ArrowButton>
@@ -191,6 +199,11 @@ Paginator.propTypes = {
   basic:PropTypes.bool,
 
   /**
+   * Whether the style of the buttons is compact
+   */
+  compact:PropTypes.bool,
+
+  /**
    * If the group buttons should be independent
    */
   independent:PropTypes.bool,
@@ -237,6 +250,7 @@ Paginator.defaultProps = {
   leftIcon           :'h',
   rightIcon          :'l',
   independent        :false,
+  compact            :true
 }
 
 export default Paginator

@@ -49,7 +49,10 @@ const SpreadPageNumbersButtons = ({
         />
       </>
     )
-      : (followingPage != limit) && <JumpButton/>
+      : (followingPage != limit) && <JumpButton
+        basic={ props.basic }
+        compact={ props.compact }
+    />
   )}
 
 

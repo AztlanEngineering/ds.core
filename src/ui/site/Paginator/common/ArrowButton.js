@@ -16,14 +16,31 @@ const ArrowButton = ({
   children,
   iconSide,
   pageNumber,
+  style,
   ...props
 }) =>{
   const { buttonClassName:className, getLink } = useContext(PaginatorContext)
   return(
     <Link to={ getLink(pageNumber) }>
       <Button
-        className={ 'it ' + className }
+        className={ 'md-h lg-h it ' + className }
+        //iconSide={ children && iconSide }
+        style={{
+          ...style,
+          'white-space':'nowrap'
+        }}
+        { ...props }
+        icon=''
+      >
+        { children }
+      </Button>
+      <Button
+        className={ 'xs-h sm-h it ' + className }
         iconSide={ children && iconSide }
+        style={{
+          ...style,
+          'white-space':'nowrap'
+        }}
         { ...props }
       >
         { children }
