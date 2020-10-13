@@ -47,7 +47,7 @@ const PhoneNumberLink = ({
   icon:userIcon
 }) => {
 
-  const icon = userIcon || (whatsapp ? 'A' : 'B')
+  const icon = userIcon || (whatsapp ? '7' : '6')
 
   const whatsappText = userWhatsappText ? `&${qs.stringify({text:userWhatsappText})}` : ''
 
