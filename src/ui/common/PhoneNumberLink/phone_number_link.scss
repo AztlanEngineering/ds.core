@@ -8,4 +8,15 @@ Classes :
 
 .phone_number_link{
   font-variant-numeric: oldstyle-nums;   
+
+  -moz-font-feature-settings: "onum"; 
+	-moz-font-feature-settings: "onum=1"; 
+	-ms-font-feature-settings: "onum";
+	-o-font-feature-settings: "onum"; 
+	-webkit-font-feature-settings: "onum"; 
+	font-feature-settings: "onum";
+
+  .fi {
+    vertical-align:sub;
+  }
 }
