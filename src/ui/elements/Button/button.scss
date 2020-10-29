@@ -9,6 +9,7 @@ $paddingSide:.6em;
 $paddingTop:.5em;
 $paddingBottom:.55em;
 $padding:$paddingTop $paddingSide $paddingBottom;
+$padding-icon-general:$paddingTop;
 $compact-size-factor:.7;
 $compact-padding-side:$compact-size-factor * $paddingSide;
 $compact-padding-top:$compact-size-factor * $paddingTop;
@@ -24,7 +25,8 @@ $iconOpacityHover:.96;
 $iconBackOpacity:.2;
 $iconBackOpacityHover:.4;
 $iconBackWidth:2em;
-$iconPadding:$paddingTop .5em $paddingBottom;
+$iconPadding:$paddingTop $padding-icon-general $paddingBottom;
+$compact-padding-icon:$compact-size-factor * $paddingTop $compact-size-factor * $padding-icon-general $compact-size-factor * $paddingBottom;
 $iconTransitionMovement:.25em;
 $iconTransitionTime:.3s;
 
@@ -54,6 +56,7 @@ $iconTransitionTime:.3s;
       :not(.g-button) > & {
         height: $lineHeight + $compact-padding-top + $compact-padding-bottom;
       }
+
     }
   }
 
@@ -96,7 +99,12 @@ $iconTransitionTime:.3s;
   }
 
   &.ic  {
-    padding: .5em;
+    padding: $padding-icon-general;
+
+    &.compact {
+      padding:$compact-size-factor * $padding-icon-general;
+
+    }
   }
 
   &.ir,
@@ -119,6 +127,13 @@ $iconTransitionTime:.3s;
         transition: all $iconTransitionTime;
         width: $iconBackWidth;
         z-index: -1;
+      }
+
+    }
+
+    &.compact { 
+      i {
+        padding: $compact-padding-icon;
       }
     }
 
