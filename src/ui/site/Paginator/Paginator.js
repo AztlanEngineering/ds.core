@@ -37,7 +37,7 @@ const Paginator = ({
   currentClassName,
 
   paginator:{
-    page,
+    currentPage:page,
     totalPages,
     /* totalDocs,
        limit,

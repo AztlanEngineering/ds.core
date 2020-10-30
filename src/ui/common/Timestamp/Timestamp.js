@@ -141,7 +141,7 @@ Timestamp.propTypes = {
   relativeMaxDays:PropTypes.number,
 
   /**
-   * Unix Format
+   * Unix Format Read https://date-fns.org/v2.16.1/docs/format for options
    */
   dateFormat:PropTypes.string.isRequired,
 
