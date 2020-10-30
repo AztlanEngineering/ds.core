@@ -66,6 +66,8 @@ const Timestamp = ({
     setCurrentDisplay(enabledFormats[nextIndex])
   }, [currentDisplay])
 
+  if(!Number(time)) return null
+
   return (
     <Element
       className={
