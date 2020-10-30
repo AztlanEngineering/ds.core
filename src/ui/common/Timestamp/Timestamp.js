@@ -1,10 +1,10 @@
 /* @fwrlines/generator-react-component 2.4.1 */
 import * as React from 'react'
-import { useState } from 'react'
+import { useMemo, useCallback, useState } from 'react'
 import PropTypes from 'prop-types'
 
 
-import { format, fromUnixTime } from 'date-fns'
+import { format, fromUnixTime, differenceInDays, formatDistance, formatRelative } from 'date-fns'
 
 //Intl
 
@@ -37,15 +37,34 @@ const Timestamp = ({
   style,
   time,
   prefix,
+  enabledFormats,
+  distanceMaxDays,
+  relativeMaxDays,
+  dateFormat,
 
   as:Element
 }) => {
 
-  const [displayUnix, setDisplayUnix] = useState(false)
+  const [currentDisplay, setCurrentDisplay] = useState(enabledFormats[0])
 
-  const onClick = (e) => {
-    setDisplayUnix(!displayUnix)
-  }
+  const formatMap = useMemo(() => ({
+    'unix'    :(unix) => Number(unix),
+    'date'    :(unix) => format(new Date(unix), dateFormat),
+    'distance':(unix) => (!distanceMaxDays || (differenceInDays(Date.now(), new Date(unix)) < distanceMaxDays)) ?
+      formatDistance(new Date(unix), new Date(), { addSuffix: true })
+      : format(new Date(unix), dateFormat)
+    ,
+    'relative':(unix) => (!relativeMaxDays || (differenceInDays(Date.now(), new Date(unix)) < relativeMaxDays)) ?
+      formatRelative(new Date(unix), new Date())
+      : format(new Date(unix), dateFormat)
+  }), [])
+
+  const onClick = useCallback((e) => {
+    e.persist()
+    const currentIndex = enabledFormats.findIndex(e => e === currentDisplay)
+    const nextIndex = (currentIndex + 1) % enabledFormats.length
+    setCurrentDisplay(enabledFormats[nextIndex])
+  }, [currentDisplay])
 
   return (
     <Element
@@ -53,20 +72,18 @@ const Timestamp = ({
         [
         //styles[baseClassName],
           baseClassName,
-          'pointer',
+          (enabledFormats.length > 1) && 'pointer',
           className
         ].filter(e => e).join(' ')
       }
       id={ id }
       style={ style }
-      onClick={ onClick }
+      onClick={ (enabledFormats.length > 1) ? onClick : undefined }
 
     >
       { prefix && prefix }
       { prefix && ' ' }
-      {
-        displayUnix ? Number(time) : format(new Date(time), 'yyyy-MM-dd\'T\'HH:mm:ss.SSSxxx')
-      }
+      { formatMap[currentDisplay](time) }
     </Element>
   )}
 
@@ -100,12 +117,41 @@ Timestamp.propTypes = {
   ]),
 
   /**
+   * Formats
+   */
+  enabledFormats:PropTypes.arrayOf(
+    PropTypes.oneOf([
+      'unix',
+      'date',
+      'distance',
+      'relative'
+    ])
+  ),
+
+  /**
+  * How many days to display distance before reverting to unix display
+  */
+  distanceMaxDays:PropTypes.number,
+
+  /**
+  * How many days to display distance before reverting to unix display
+  */
+  relativeMaxDays:PropTypes.number,
+
+  /**
+   * Unix Format
+   */
+  dateFormat:PropTypes.string.isRequired,
+
+  /**
    * The time to display
    */
   time:PropTypes.number.isRequired,
 }
 
 Timestamp.defaultProps = {
-  as:'p',
+  as            :'p',
+  dateFormat    :'yyyy-MM-dd\'T\'HH:mm:ss.SSSxxx',
+  enabledFormats:['unix', 'date'],
 }
 export default Timestamp

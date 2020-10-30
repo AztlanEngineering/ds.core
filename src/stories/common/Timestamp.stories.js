@@ -4,28 +4,29 @@ import faker from 'faker'
 //import {} from 'react'
 
 //import { action } from '@storybook/addon-actions'
+import { subDays } from 'date-fns'
 
 import { Timestamp } from 'ui'
-//import QUERY from './graphql/query.graphql'
-//import { AplProvider } from 'stories/utils'
-//import { Router } from 'stories/utils'
-//import {ALL_COLORS, SIZES } from 'stories/config.js'
-//import { LIST, LIST_XS, TEXT_XXS_ESC, TEXT_XXS, TEXT_XS, TEXT } from 'stories/utils/Dummy'
+/* import QUERY from './graphql/query.graphql'
+   import { AplProvider } from 'stories/utils'
+   import { Router } from 'stories/utils'
+   import {ALL_COLORS, SIZES } from 'stories/config.js'
+   import { LIST, LIST_XS, TEXT_XXS_ESC, TEXT_XXS, TEXT_XS, TEXT } from 'stories/utils/Dummy' */
 
 //const endpoint = 'https://api.fwrlines.com/graphql'
 
 export default {
-  title: 'common/Timestamp',
-  component:Timestamp,
+  title        :'common/Timestamp',
+  component    :Timestamp,
   //componentSubtitle:'Component subtitle',
-  subcomponents: {
+  subcomponents:{
     //Item:Timestamp.Item
   },
-  parameters: {
-    decorators: [ 
-      //storyfn => <div className="">{ storyfn() }</div>,
-      //storyfn => <AplProvider endpoint={ endpoint }>{ storyfn() }</AplProvider>,
-      //storyfn => <Router>{ storyfn() }</Router>,
+  parameters:{
+    decorators:[
+      /* storyfn => <div className="">{ storyfn() }</div>,
+         storyfn => <AplProvider endpoint={ endpoint }>{ storyfn() }</AplProvider>,
+         storyfn => <Router>{ storyfn() }</Router>, */
     ]
   }
 }
@@ -43,18 +44,83 @@ const storyParameters = {
  */
 
 export const Default = () => (
-  <Timestamp time={ Date.now() }/> 
+  <Timestamp time={ Date.now() }/>
+)
+
+export const DateFormat = () => (
+  <Timestamp
+    time={ Date.now() }
+    enabledFormats={['date']}
+    dateFormat={'yyyy-MM-dd\' at \'HH:mm'}
+  />
+
+)
+
+
+export const DistanceFormat = () => (
+  <Timestamp
+    time={ subDays(Date.now(), 3) }
+    enabledFormats={['distance','date']}
+  />
+
+)
+
+export const DistanceFormatMaxDays = () => (
+  <>
+    This should appear as distance
+    <Timestamp
+      time={ subDays(Date.now(), 3) }
+      enabledFormats={['distance','date']}
+      distanceMaxDays={ 4 }
+    />
+    But this should appear as date
+    <Timestamp
+      time={ subDays(Date.now(), 5) }
+      enabledFormats={['distance','date']}
+      distanceMaxDays={ 4 }
+    />
+  </>
+
+)
+
+export const RelativeFormat = () => (
+  <Timestamp
+    time={ subDays(Date.now(), 5) }
+    enabledFormats={['relative','date']}
+  />
+
+)
+
+export const RelativeFormatMaxDays = () => (
+  <>
+    This should appear as distance
+    <Timestamp
+      time={ subDays(Date.now(), 3) }
+      enabledFormats={['relative','date']}
+      relativeMaxDays={ 4 }
+    />
+    But this should appear as date
+    <Timestamp
+      time={ subDays(Date.now(), 5) }
+      enabledFormats={['relative','date']}
+      relativeMaxDays={ 4 }
+    />
+  </>
+
 )
 
 //Default.parameters = storyParameters
 
 export const Prefix = () => (
-  <Timestamp time={ Date.now() } prefix={
-    <strong>
-      Updated :
+  <Timestamp
+    time={ Date.now() }
+    prefix={
+      <strong>
+        Updated :
       </strong>
 
-  }/> 
+    }
+  />
 )
 
 //Variant.parameters = storyParameters
