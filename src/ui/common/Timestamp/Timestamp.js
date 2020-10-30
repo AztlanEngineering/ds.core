@@ -85,7 +85,7 @@ const Timestamp = ({
     >
       { prefix && prefix }
       { prefix && ' ' }
-      { formatMap[currentDisplay](time) }
+      { formatMap[currentDisplay](Number(time)) }
     </Element>
   )}
 
