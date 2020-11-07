@@ -56,8 +56,7 @@ const Heading = ({
       { label &&
         <LabelElement
           className={
-            (labelClassName ? ' ' + labelClassName : '')
-
+            `${labelClassName || ''}`
           }
           style={ labelStyle }
           { ...labelProps }
@@ -67,10 +66,10 @@ const Heading = ({
       }
 
       <HeadingElement
-        className={
-          C.content
-      + (headingClassName ? ' ' + headingClassName : '')
-        }
+        className={[
+          C.content,
+          headingClassName,
+        ].filter(e => e).join(' ')}
         style={ headingStyle }
         { ...headingProps }
       >
@@ -81,7 +80,7 @@ const Heading = ({
         <Subtitle
           as={ subtitleAs }
           className={
-            (subtitleClassName ? ' ' + subtitleClassName : '')
+            `${subtitleClassName || ''}`
           }
           style={ subtitleStyle }
           { ...subtitleProps }
