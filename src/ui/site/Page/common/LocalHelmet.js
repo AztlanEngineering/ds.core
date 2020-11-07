@@ -45,7 +45,7 @@ const helmet_map = [
       c.SITE_CANONICAL ?
         <link
           rel='canonical'
-          href={`${c.SITE_CANONICAL}/${v}`}
+          href={`${c.SITE_CANONICAL}${v}`}
           key='canonical'
         /> :
         <link
