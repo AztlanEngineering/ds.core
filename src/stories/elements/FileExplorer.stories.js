@@ -11,11 +11,9 @@ export default {
     'File'  :FileExplorer.File,
     'Folder':FileExplorer.Folder
   },
-  parameters:{
-    decorators:[
-      /* storyfn => <div className="">{ storyfn() }</div>,*/
-    ]
-  }
+  decorators:[
+    /* storyfn => <div className="">{ storyfn() }</div>,*/
+  ]
 }
 
 export const Default = () => (

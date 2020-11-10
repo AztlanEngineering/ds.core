@@ -13,13 +13,11 @@ import { LocalIndex } from 'ui'
 export default {
   title     :'elements/LocalIndex',
   component :LocalIndex,
-  parameters:{
-    decorators:[
-      /* storyfn => <div className="">{ storyfn() }</div>,
+  decorators:[
+    /* storyfn => <div className="">{ storyfn() }</div>,
          storyfn => <AplProvider endpoint={ endpoint }>{ storyfn() }</AplProvider>,
          storyfn => <Router>{ storyfn() }</Router>, */
-    ]
-  }
+  ]
 }
 
 export const Default = () => (

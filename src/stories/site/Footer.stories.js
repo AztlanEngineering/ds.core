@@ -21,13 +21,11 @@ export default {
   subcomponents:{
     //Item:Footer.Item
   },
-  parameters:{
-    decorators:[
-      /* storyfn => <div className="">{ storyfn() }</div>,
+  decorators:[
+    /* storyfn => <div className="">{ storyfn() }</div>,
          storyfn => <AplProvider endpoint={ endpoint }>{ storyfn() }</AplProvider>, */
-      storyfn => <Router>{ storyfn() }</Router>,
-    ]
-  }
+    storyfn => <Router>{ storyfn() }</Router>,
+  ]
 }
 
 /*

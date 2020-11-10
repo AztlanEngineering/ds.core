@@ -6,28 +6,26 @@ import faker from 'faker'
 //import { action } from '@storybook/addon-actions'
 
 import { Shortcut, ShortcutTester } from 'ui'
-//import QUERY from './graphql/query.graphql'
-//import { AplProvider } from 'stories/utils'
-//import { Router } from 'stories/utils'
-//import {ALL_COLORS, SIZES } from 'stories/config.js'
-//import { LIST, LIST_XS, TEXT_XXS_ESC, TEXT_XXS, TEXT_XS, TEXT } from 'stories/utils/Dummy'
+/* import QUERY from './graphql/query.graphql'
+   import { AplProvider } from 'stories/utils'
+   import { Router } from 'stories/utils'
+   import {ALL_COLORS, SIZES } from 'stories/config.js'
+   import { LIST, LIST_XS, TEXT_XXS_ESC, TEXT_XXS, TEXT_XS, TEXT } from 'stories/utils/Dummy' */
 
 //const endpoint = 'https://api.fwrlines.com/graphql'
 
 export default {
-  title: 'site/Shortcut',
-  component:Shortcut,
+  title        :'site/Shortcut',
+  component    :Shortcut,
   //componentSubtitle:'Component subtitle',
-  subcomponents: {
+  subcomponents:{
     //Item:Shortcut.Item
   },
-  parameters: {
-    decorators: [ 
-      //storyfn => <div className="">{ storyfn() }</div>,
-      //storyfn => <AplProvider endpoint={ endpoint }>{ storyfn() }</AplProvider>,
-      //storyfn => <Router>{ storyfn() }</Router>,
-    ]
-  }
+  decorators:[
+    /* storyfn => <div className="">{ storyfn() }</div>,
+       storyfn => <AplProvider endpoint={ endpoint }>{ storyfn() }</AplProvider>,
+       storyfn => <Router>{ storyfn() }</Router>, */
+  ]
 }
 
 /*
@@ -43,40 +41,39 @@ const storyParameters = {
  */
 
 export const Default = () => (
-  <Shortcut 
-    keys={['k']} 
+  <Shortcut
+    keys={['k']}
     action={() => alert('Shortcut pressed')}
-  /> 
+  />
 )
 
 export const Ctrl = () => (
   <Shortcut
-    keys={['ctrl', 'K']} 
+    keys={['ctrl', 'K']}
     action={() => alert('Shortcut pressed')}
-  /> 
+  />
 )
 
 export const Alt = () => (
   <Shortcut
-    keys={['alt', 'K']} 
+    keys={['alt', 'K']}
     action={() => alert('Shortcut pressed')}
-  /> 
+  />
 )
 
 export const Shift = () => (
   <Shortcut
-    keys={['shift', 'K']} 
+    keys={['shift', 'K']}
     action={() => alert('Shortcut pressed')}
-  /> 
+  />
 )
 
 //Default.parameters = storyParameters
 
 export const Tester = () => {
   return(
-    <ShortcutTester
-    /> 
-)
+    <ShortcutTester />
+  )
 }
 
 //Variant.parameters = storyParameters

@@ -11,11 +11,9 @@ import { TEXT_XXS_ESC, TEXT_XXS, TEXT_XS, TEXT } from '../utils'
 export default {
   title     :'elements/PageProgressBar',
   component :PageProgressBar,
-  parameters:{
-    decorators:[
-      //storyfn => <Router>{ storyfn() }</Router>,
-    ]
-  }
+  decorators:[
+    //storyfn => <Router>{ storyfn() }</Router>,
+  ]
 }
 
 export const Default = () => (

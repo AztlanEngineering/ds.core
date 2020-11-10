@@ -14,11 +14,9 @@ export default {
 
     'LocalHelmet':LocalHelmet
   },
-  parameters:{
-    decorators:[
-      //storyfn => <Router>{ storyfn() }</Router>,
-    ]
-  }
+  decorators:[
+    //storyfn => <Router>{ storyfn() }</Router>,
+  ]
 }
 
 const id = 'homepage'

@@ -24,11 +24,9 @@ export default {
     'PageNumberButton'        :PageNumberButton,
     'SpreadPageNumbersButtons':SpreadPageNumbersButtons,
   },
-  parameters:{
-    decorators:[
-      storyfn => <Router>{ storyfn() }</Router>,
-    ]
-  }
+  decorators:[
+    storyfn => <Router>{ storyfn() }</Router>,
+  ]
 }
 
 var { docs, ...paginator } = POSTS

@@ -9,11 +9,9 @@ import { Router } from 'stories/utils'
 export default {
   title     :'elements/CircleInfo',
   component :CircleInfo,
-  parameters:{
-    decorators:[
-      storyfn => <Router>{ storyfn() }</Router>,
-    ]
-  }
+  decorators:[
+    storyfn => <Router>{ storyfn() }</Router>,
+  ]
 }
 
 const map = [

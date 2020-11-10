@@ -22,13 +22,11 @@ export default {
     'HorizontalBar':ContentSlides.Horizontalbar,
     'SideBar'      :ContentSlides.Sidebar
   },
-  parameters:{
-    decorators:[
-      storyfn => <Router>{ storyfn() }</Router>,
-      /* storyfn => <div className="">{ storyfn() }</div>,
+  decorators:[
+    storyfn => <Router>{ storyfn() }</Router>,
+    /* storyfn => <div className="">{ storyfn() }</div>,
        storyfn => <AplProvider endpoint={ endpoint }>{ storyfn() }</AplProvider>,*/
-    ]
-  }
+  ]
 }
 
 export const Default = () => {

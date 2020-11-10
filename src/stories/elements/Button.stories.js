@@ -18,13 +18,11 @@ export default {
   subcomponents:{
     Group:Button.Group
   },
-  parameters:{
-    decorators:[
-      /* storyfn => <div className="">{ storyfn() }</div>,
+  decorators:[
+    /* storyfn => <div className="">{ storyfn() }</div>,
          storyfn => <AplProvider endpoint={ endpoint }>{ storyfn() }</AplProvider>,
          storyfn => <Router>{ storyfn() }</Router>, */
-    ]
-  }
+  ]
 }
 
 const button_text = (id) => `I am the ${id}button`

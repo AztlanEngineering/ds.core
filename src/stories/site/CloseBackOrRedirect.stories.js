@@ -6,28 +6,26 @@ import faker from 'faker'
 //import { action } from '@storybook/addon-actions'
 
 import { CloseBackOrRedirect } from 'ui'
-//import QUERY from './graphql/query.graphql'
-//import { AplProvider } from 'stories/utils'
+/* import QUERY from './graphql/query.graphql'
+   import { AplProvider } from 'stories/utils' */
 import { Router } from 'stories/utils'
-//import {ALL_COLORS, SIZES } from 'stories/config.js'
-//import { LIST, LIST_XS, TEXT_XXS_ESC, TEXT_XXS, TEXT_XS, TEXT } from 'stories/utils/Dummy'
+/* import {ALL_COLORS, SIZES } from 'stories/config.js'
+   import { LIST, LIST_XS, TEXT_XXS_ESC, TEXT_XXS, TEXT_XS, TEXT } from 'stories/utils/Dummy' */
 
 //const endpoint = 'https://api.fwrlines.com/graphql'
 
 export default {
-  title: 'site/CloseBackOrRedirect',
-  component:CloseBackOrRedirect,
+  title        :'site/CloseBackOrRedirect',
+  component    :CloseBackOrRedirect,
   //componentSubtitle:'Component subtitle',
-  subcomponents: {
+  subcomponents:{
     //Item:CloseBackOrRedirect.Item
   },
-  parameters: {
-    decorators: [ 
-      //storyfn => <div className="">{ storyfn() }</div>,
-      //storyfn => <AplProvider endpoint={ endpoint }>{ storyfn() }</AplProvider>,
-      storyfn => <Router>{ storyfn() }</Router>,
-    ]
-  }
+  decorators:[
+    /* storyfn => <div className="">{ storyfn() }</div>,
+       storyfn => <AplProvider endpoint={ endpoint }>{ storyfn() }</AplProvider>, */
+    storyfn => <Router>{ storyfn() }</Router>,
+  ]
 }
 
 /*
@@ -49,7 +47,7 @@ export const Default = () => (
 //Default.parameters = storyParameters
 
 export const Variant = () => (
-    <CloseBackOrRedirect icon='h'/>
+  <CloseBackOrRedirect icon='h'/>
 )
 
 //Variant.parameters = storyParameters

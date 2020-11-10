@@ -13,13 +13,11 @@ import { Wireframe } from 'ui'
 export default {
   title     :'common/Wireframe.Image',
   component :Wireframe.Image,
-  parameters:{
-    decorators:[
-      /* storyfn => <div className="">{ storyfn() }</div>,
+  decorators:[
+    /* storyfn => <div className="">{ storyfn() }</div>,
          storyfn => <AplProvider endpoint={ endpoint }>{ storyfn() }</AplProvider>,
          storyfn => <Router>{ storyfn() }</Router>, */
-    ]
-  }
+  ]
 }
 
 const dimensions_list = [

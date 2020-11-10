@@ -20,13 +20,11 @@ export default {
   subcomponents:{
     'Item':IconList.Item
   },
-  parameters:{
-    decorators:[
-      /* storyfn => <div className="">{ storyfn() }</div>,
+  decorators:[
+    /* storyfn => <div className="">{ storyfn() }</div>,
          storyfn => <AplProvider endpoint={ endpoint }>{ storyfn() }</AplProvider>,
          storyfn => <Router>{ storyfn() }</Router>, */
-    ]
-  }
+  ]
 }
 
 export const Default = () => {
@@ -36,8 +34,8 @@ export const Default = () => {
       content:'An amazing feature'
     },
     {
-      content:'Better than an iPhone',
-      icon   :'o',
+      content  :'Better than an iPhone',
+      icon     :'o',
       className:'y-green z-secondary'
     },
     {

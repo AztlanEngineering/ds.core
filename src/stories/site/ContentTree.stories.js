@@ -16,18 +16,16 @@ import { TEXT } from '../utils'
 export default {
   title     :'site/ContentTree',
   component :ContentTree,
-  parameters:{
-    decorators:[
-      storyfn => <ContextProvider
-        content={ TEXT }
-      >
-        { storyfn() }
-      </ContextProvider>
-      /* storyfn => <div className="">{ storyfn() }</div>,
+  decorators:[
+    storyfn => <ContextProvider
+      content={ TEXT }
+               >
+      { storyfn() }
+               </ContextProvider>
+    /* storyfn => <div className="">{ storyfn() }</div>,
          storyfn => <AplProvider endpoint={ endpoint }>{ storyfn() }</AplProvider>,
          storyfn => <Router>{ storyfn() }</Router>, */
-    ]
-  }
+  ]
 }
 
 export const Default = () => (
