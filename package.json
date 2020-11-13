@@ -29,7 +29,9 @@
     "bd": "npm run build&&npm run commit ",
     "npre": "nodemon --watch src --ignore 'src/stories' --exec 'npm run build:es && echo done'",
     "postinstall": "node ./scripts/postinstall.js",
-    "relink": "npm link @fwrlines/utils"
+    "relink": "npm link @fwrlines/utils",
+    "version:alpha": "npm version prerelease --preid=alpha",
+    "version:beta": "npm version prerelease --preid=beta"
   },
   "keywords": [],
   "license": "ISC",
