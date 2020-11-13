@@ -47,14 +47,12 @@ export const SizeVariant = () => {
       <AnimatedVCaret
         active={ active }
         setActive={ setActive }
-        id='myarrowsmall'
         className='c-yellow'
         height='120px'
       />
       <AnimatedVCaret
         active={ active2 }
         setActive={ setActive2 }
-        id='myarrow2'
         className='c-green'
         height='200px'
         width='200px'
@@ -69,7 +67,6 @@ export const Bolder = () => {
     <AnimatedVCaret
       active={ active }
       setActive={ setActive }
-      id='myarrowbold'
       className='c-violet'
       strokeWidth={20}
       width='300px'

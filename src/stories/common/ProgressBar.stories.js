@@ -28,7 +28,9 @@ export default {
 }
 
 export const Default = () => (
+  <div>
   <ProgressBar/>
+  </div>
 )
 
 export const Width = () => (

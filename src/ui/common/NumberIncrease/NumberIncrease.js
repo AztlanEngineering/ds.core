@@ -1,6 +1,6 @@
 /* @fwrlines/generator-react-component 1.0.1 */
 import * as React from 'react'
-import { useState, useMemo, useEffect }from 'react'
+import { useState, useMemo }from 'react'
 import PropTypes from 'prop-types'
 
 import { useInterval } from '@fwrlines/utils'
@@ -49,9 +49,7 @@ const NumberIncrease = ({
   )
 
 
-  let [count, setCount] = useState(0)
-
-  useEffect(() => {console.log(number, duration, interval)}, [duration, number])
+  const [count, setCount] = useState(0)
 
   const condition = count < number
 

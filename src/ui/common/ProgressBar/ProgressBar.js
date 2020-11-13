@@ -1,9 +1,10 @@
 /* @fwrlines/generator-react-component 1.5.0 */
 import * as React from 'react'
-//import {} from 'react'
+import { useMemo } from 'react'
 import PropTypes from 'prop-types'
 
 
+import { generateRandomString } from '@fwrlines/utils'
 
 /* Config
    import C from 'ui/cssClasses' */
@@ -22,7 +23,7 @@ const baseClassName = 'progress_bar'
  * Has color `x`
  */
 const ProgressBar = ({
-  id,
+  id:userId,
   className,
   style,
 
@@ -36,88 +37,80 @@ const ProgressBar = ({
 
   const pathVerticalPosition = strokeWidth / 2
 
+  const localId = useMemo(() => `_${(userId || generateRandomString())}`, [])
+
   return (
-    <div
+    <svg
+      viewBox={`0 0 100 ${strokeWidth}`}
+      xmlSpace='preserve'
+      xmlns='http://www.w3.org/2000/svg'
+      version='1.1'
+      preserveAspectRatio='none'
+      height={ strokeWidth }
+      style={{ ...style, height: strokeWidth }}
+      id={ userId }
       className={
         [
           baseClassName,
           className
         ].filter(e => e).join(' ')
       }
-      id={ id }
-      style={{ ...style, height: strokeWidth }}
     >
-      <svg
-        viewBox={`0 0 100 ${strokeWidth}`}
-        xmlSpace='preserve'
-        xmlns='http://www.w3.org/2000/svg'
-        version='1.1'
-        preserveAspectRatio='none'
-        height={ strokeWidth }
-        className={
-          //TODO
-          [
-            baseClassName,
-            className
-          ].filter(e => e).join(' ')
-        }
-      >
 
-        { gradientMap &&
-          <defs>
-            <linearGradient
-              id='pbg'
-              x2='100%'
-              y2='0'
-            >
-              {
-                gradientMap.map((e,i) =>(
-                  <stop
-                    key={i}
-                    { ...e }
-                  />
-                ))
-              }
-            </linearGradient>
-          </defs>
-        }
-
-        <mask id='pb_mask'>
-          <rect
-            width='100'
-            height={ strokeWidth }
-            fill='black'
-          />
-          <path
-            d={`M0 ${pathVerticalPosition} H 100`}
-            strokeLinecap='butt'
-            strokeWidth={ strokeWidth }
-            strokeDasharray='100'
-            id='active'
-            style={{
-              '--do':Math.min(Math.max(maximum - current, 0), maximum)
-            }}
-            stroke='white'
-          />
-        </mask>
-
-        <g>
-          <rect
-            width='100'
-            height={ strokeWidth }
-            id='pb_back'
-            className={
-              rectClassName ? rectClassName : ''
+      { gradientMap &&
+        <defs>
+          <linearGradient
+            id={ `pbg${localId}` }
+            x2='100%'
+            y2='0'
+          >
+            {
+              gradientMap.map((e,i) =>(
+                <stop
+                  key={i}
+                  { ...e }
+                />
+              ))
             }
-            mask='url(#pb_mask)'
-            style={{
-				    '--fill':gradientMap && `url(#pbg)`
-				  }}
-          />
-        </g>
-      </svg>
+          </linearGradient>
+        </defs>
+      }
 
-    </div>
+      <mask id={`pb_mask${localId}`}>
+        <rect
+          width='100'
+          height={ strokeWidth }
+          fill='black'
+        />
+        <path
+          d={`M0 ${pathVerticalPosition} H 100`}
+          strokeLinecap='butt'
+          strokeWidth={ strokeWidth }
+          strokeDasharray='100'
+          id={ `active${localId}` }
+          style={{
+            '--do':Math.min(Math.max(maximum - current, 0), maximum)
+          }}
+          stroke='white'
+        />
+      </mask>
+
+      <g>
+        <rect
+          width='100'
+          height={ strokeWidth }
+          id={`pb_back${localId}`}
+          className={
+            rectClassName ? rectClassName : ''
+          }
+          mask={`url(#pb_mask${localId})`}
+          style={{
+            '--fill':gradientMap && `url(#pbg${localId})`
+				  }}
+        />
+      </g>
+    </svg>
+
   )}
 
 ProgressBar.propTypes = {

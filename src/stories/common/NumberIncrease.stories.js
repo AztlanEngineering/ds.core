@@ -48,7 +48,7 @@ export const Default = () =>(
     <NumberIncrease
       number={100}
       duration={1000}
-      className='s3 ks'
+      className='s3'
     />
   </div>
 )
@@ -59,7 +59,7 @@ export const OtherWrapper = () =>(
     <NumberIncrease
       number={100}
       duration={1000}
-      className='s3 ks'
+      className='s3'
       as='h2'
     />
   </div>
@@ -82,7 +82,7 @@ export const Variants = () =>(
       <NumberIncrease
         number={ e.number }
         duration={ e.duration }
-        className='s3 ks'
+        className='s3'
       />
     </div>
 
@@ -100,7 +100,7 @@ export const WithSuffix = () =>(
   </div>
 )
 
-export const WithSuffixClass = () => (
+export const WithSuffixClassAndStyle = () => (
   variants.map((e,i) =>
     <div key={i}>
       <p>
@@ -115,8 +115,9 @@ export const WithSuffixClass = () => (
         number={ e.number }
         duration={ e.duration }
         suffix={ i % 2 == 0 ? 'km' : 'years' }
-        className='s2 ks'
-        suffixClassName={ i % 2 == 0 ? 'c-x x-red' : 'c-x x-green' }
+        className='s2'
+        suffixClassName={ i % 2 == 0 ? 'c-x x-red' : 'c-x x-green s-2' }
+        suffixStyle={{ background:'beige' }}
       />
     </div>
   )
