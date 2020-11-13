@@ -48,8 +48,8 @@ export const Default = () => (
   <Label>This is a simple label</Label>
 )
 
-export const NewStory = () => (
-  <Label className='x-red b-x'>New story test</Label>
+export const Rounded = () => (
+  <Label className='x-red'>Round Label</Label>
 )
 
 export const Variant = () => (
@@ -70,8 +70,9 @@ export const Colors = () => (
     <Label
       key={i}
       className={ 'x-'+e}
-      circle={ i % 2 }
+      rounded={Boolean( i % 2 )}
     >
+      {console.log('id', i % 2)}
       { variants[1].content || 'blah'}
     </Label>
   )
@@ -117,7 +118,7 @@ export const Basic = () => (
     <Label
       key={i}
       className={ 'x-'+e}
-      circle={ i % 2 }
+      rounded={Boolean( i % 2 )}
       basic
     >
       { variants[1].content || 'blah'}
