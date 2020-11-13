@@ -16,20 +16,24 @@ if(!isBackend) {
 
 const baseClassName = 'label'
 
+/**
+ * Label: <br/>
+ * background: var()
+ */
+
 const Label = ({
   id,
   className,
   style,
   children,
+  as:Wrapper,
 
   icon,
   basic,
   simple,
-  circle,
+  rounded,
   dash,
 
-  as:Wrapper,
-  
   ...otherProps
 }) => {
 
@@ -43,7 +47,7 @@ const Label = ({
           C.transition,
           basic && C.basic,
           simple && C.simple,
-          circle && C.circle,
+          rounded && 'rounded',
           dash && C.dash,
           /*   icon && (C.fontIcon + ' ' + C.iconInside) */
         ].filter(e => e).join(' ')
@@ -80,17 +84,10 @@ Label.propTypes = {
   /**
    * With html tag to use
    */
-  as:PropTypes.string,
-
-  /**
-   * Circular
-   */
-  circle:PropTypes.bool,
-
-  /**
-   * Whether to apply the dash style
-   */
-  dash:PropTypes.bool,
+  as:PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.object
+  ]),
 
   /**
    * Icon only
@@ -98,21 +95,32 @@ Label.propTypes = {
   icon:PropTypes.bool,
 
   /**
+   * Basic style, in the spirit of semantic-ui
+   */
+  basic:PropTypes.bool,
+
+  /**
    * Simple style, in the spirit of semantic-ui
    */
   simple:PropTypes.bool,
 
   /**
-   * Basic style, in the spirit of semantic-ui
+   * Circular
    */
-  basic:PropTypes.bool,
+  rounded:PropTypes.bool,
+
+  /**
+   * Whether to apply the dash style
+   */
+  dash:PropTypes.bool,
 }
 
 Label.defaultProps = {
-  as    :'span',
-  basic :false,
-  simple:false,
-  dash:false
+  as     :'span',
+  basic  :false,
+  simple :false,
+  rounded:false,
+  dash   :false
 }
 
 export default Label
