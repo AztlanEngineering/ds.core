@@ -28,8 +28,9 @@ const baseClassName = 'keys'
 
 
 /**
- * Use `Keys` to
- * Has color `x`
+ * Use `Keys` to display inline keyboard Keys. If the key name has more than 1 character in its name (for instance ctrl), it will display in a long key.<br/>
+ * Color : `--x`, defaults to `--subtitle`<br/>
+ * CSS Vars : key `border-radius:var(--r)` 
  */
 const Keys = ({
   id,
@@ -52,7 +53,7 @@ const Keys = ({
       style={ style }
     >
       { keys.map((e, i) =>
-        <span
+        <kbd
           className={
             [
               'key',
@@ -62,7 +63,7 @@ const Keys = ({
           key={i}
         >
           { e }
-        </span>
+        </kbd>
       ) }
     </span>
   )}

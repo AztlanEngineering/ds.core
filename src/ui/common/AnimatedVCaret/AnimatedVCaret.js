@@ -16,25 +16,25 @@ if(!isBackend) {
 const baseClassName = 'animated_v_caret'
 
 /**
- * Use `AnimatedVCaret` to command the opening or closing of an accordion.
- * Has class `C.active` on `active`
- * Has color `x`, and `y, x` on active
+ * `AnimatedVCaret` : An animated caret to be associated with the opening or closing of a ui element, like an accordion or menu. <br/>
+ * Colors : `--x`, defaults to `--paragraph`
  */
 const AnimatedVCaret = ({
   id,
-  listenerId,
   className,
   style,
 
+  listenerId,
+
   strokeWidth=10,
   strokeLinecap,
-  active,
 
   height,
   width,
 
   duration,
 
+  active,
   setActive,
 }) =>
 {
@@ -130,14 +130,9 @@ const AnimatedVCaret = ({
 
 AnimatedVCaret.propTypes = {
   /**
-   * Provide an HTML id to this element
+   * Provide an HTML id to this element. Without `id`  or `listenerId` the SVG animation breaks.
    */
   id:PropTypes.string,
-
-  /**
-   * Which id to listen to for the animation (default : current)
-   */
-  listenerId:PropTypes.string,
 
   /**
    * The html class names to be provided to this element
@@ -150,17 +145,27 @@ AnimatedVCaret.propTypes = {
   style:PropTypes.object,
 
   /**
-   *  The children JSX
+   * The id of another element in the DOM to trump the default id to trigger the animation. If this is not provided the animation will only be triggered on clicking the caret only.
    */
-  children:PropTypes.node,
+  listenerId:PropTypes.string,
 
   /**
-   * The height of the SVG node
+   * The `stroke-width` SVG Property
+   */
+  strokeWidth:PropTypes.number,
+
+  /**
+   * The `stroke-linecap` SVG Property
+   */
+  strokeLinecap:PropTypes.oneOf(['round', 'square', 'butt']),
+
+  /**
+   * The height of the SVG node, as a SVG property
    */
   height:PropTypes.string,
 
   /**
-   * The width of the SVG node
+   * The width of the SVG node, as a SVG property
    */
   width:PropTypes.string,
 
@@ -171,16 +176,6 @@ AnimatedVCaret.propTypes = {
     PropTypes.number,
     PropTypes.string
   ]),
-
-  /**
-   * The stroke width SVG  Property
-   */
-  strokeWidth:PropTypes.number,
-
-  /**
-   * The stroke line cap SVG Property
-   */
-  strokeLinecap:PropTypes.oneOf(['round', 'square', 'butt']),
 
   /**
    * Whether the position is down

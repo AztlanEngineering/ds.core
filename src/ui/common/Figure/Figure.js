@@ -20,15 +20,15 @@ const baseClassName = 'figure'
 
 
 /**
- * Use `Figure` to
- * Has color `x`
+ * `Figure` : A complete markup for html `<figure>`, with an `<img>` and a `<figcaption>`. Has default width of 100% to fit the conainter <br/>
+ * CSS Vars : image `border-radius:var(--r)` <br/><br/>
+ * `Image` : A complete html markup for `<img>`.
  */
 const Figure = ({
   id,
   className,
   style,
   children,
-
 
   src,
   alt,

@@ -14,7 +14,7 @@ import { Subtitle, Figure, Image } from 'ui'
 //const endpoint = 'https://api.fwrlines.com/graphql'
 
 export default {
-  title        :'common/Figure',
+  title        :'common/Figure & Image',
   component    :Figure,
   //componentSubtitle:'Component subtitle',
   subcomponents:{
@@ -36,7 +36,16 @@ export const Default = () => (
   </Figure>
 )
 
-export const ImgSize = () => (
+export const SimpleImage = () => (
+  <Image
+    src='https://images.pexels.com/photos/373912/pexels-photo-373912.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260'
+    alt='A city landscape'
+    style={{height: '200px'}}
+  />
+)
+SimpleImage.storyName = 'Image'
+
+export const FigureImgSize = () => (
   <Figure
     src='https://images.pexels.com/photos/373912/pexels-photo-373912.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260'
     alt='A city landscape'
@@ -47,6 +56,7 @@ export const ImgSize = () => (
 )
 
 export const ObjectFit = () => (
+  <>
   <Figure
     src='https://images.pexels.com/photos/373912/pexels-photo-373912.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260'
     alt='A city landscape'
@@ -55,25 +65,23 @@ export const ObjectFit = () => (
   >
     <Subtitle>The image caption</Subtitle>
   </Figure>
+  <Image
+    src='https://images.pexels.com/photos/373912/pexels-photo-373912.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260'
+    alt='A city landscape'
+    objectFit='fill'
+    style={{height: '200px', width:'100%'}}
+  />
+    </>
 )
 
-export const Size = () => (
+export const ObjectPosition = () => (
   <Figure
     src='https://images.pexels.com/photos/373912/pexels-photo-373912.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260'
     alt='A city landscape'
     imgStyle={{height: '200px'}}
-    className='s-2'
+    objectPosition='left top'
   >
-    <Subtitle upper>The image caption</Subtitle>
+    <Subtitle>The image caption</Subtitle>
   </Figure>
-)
-
-export const SimpleImage = () => (
-  <Image
-    src='https://images.pexels.com/photos/373912/pexels-photo-373912.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260'
-    alt='A city landscape'
-    style={{height: '200px'}}
-    className='s-2'
-  />
 )
 

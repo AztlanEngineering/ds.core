@@ -24,8 +24,8 @@ import PropTypes from 'prop-types'
 
 
 /**
- * Use `Image` to display an image. Can be passed additional props that will be forwarded to the inner `img` tag
- * Has color `x`
+ * 
+ * 
  */
 const Image = ({
   /* id,
