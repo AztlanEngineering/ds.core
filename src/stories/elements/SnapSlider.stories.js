@@ -21,13 +21,11 @@ const Outside = ({className, children}) =>(
 export default {
   title     :'elements/SnapSlider',
   component :SnapSlider,
-  parameters:{
-    decorators:[
-      storyfn => <Outside className=''>{ storyfn() }</Outside>,
-      /* storyfn => <AplProvider endpoint={ endpoint }>{ storyfn() }</AplProvider>,
+  decorators:[
+    storyfn => <Outside className=''>{ storyfn() }</Outside>,
+    /* storyfn => <AplProvider endpoint={ endpoint }>{ storyfn() }</AplProvider>,
          storyfn => <Router>{ storyfn() }</Router>, */
-    ]
-  }
+  ]
 }
 
 const elements_map = [

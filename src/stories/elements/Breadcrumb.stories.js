@@ -9,11 +9,9 @@ import { Router } from 'stories/utils'
 export default {
   title     :'elements/Breadcrumb',
   component :Breadcrumb,
-  parameters:{
-    decorators:[
-      storyfn => <Router>{ storyfn() }</Router>,
-    ]
-  }
+  decorators:[
+    storyfn => <Router>{ storyfn() }</Router>,
+  ]
 }
 
 export const Default = () => (

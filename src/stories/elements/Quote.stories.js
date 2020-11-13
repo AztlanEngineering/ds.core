@@ -13,13 +13,11 @@ import { Quote } from 'ui'
 export default {
   title     :'elements/Quote',
   component :Quote,
-  parameters:{
-    decorators:[
-      /* storyfn => <div className="">{ storyfn() }</div>,
+  decorators:[
+    /* storyfn => <div className="">{ storyfn() }</div>,
          storyfn => <AplProvider endpoint={ endpoint }>{ storyfn() }</AplProvider>,
          storyfn => <Router>{ storyfn() }</Router>, */
-    ]
-  }
+  ]
 }
 
 const paragraph_text = 'The hour when ye say: \'What good is my justice! I do not see that I am fervour and fuel. The just, however, are fervour and fuel!\''

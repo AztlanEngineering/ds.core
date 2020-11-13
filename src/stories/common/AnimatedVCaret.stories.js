@@ -9,11 +9,9 @@ import { AnimatedVCaret } from 'ui'
 export default {
   title     :'common/AnimatedVCaret',
   component :AnimatedVCaret,
-  parameters:{
-    decorators:[
-      //storyfn => <div className="">{ storyfn() }</div>,
-    ]
-  }
+  decorators:[
+    //storyfn => <div className="">{ storyfn() }</div>,
+  ]
 }
 
 export const Default = () => {

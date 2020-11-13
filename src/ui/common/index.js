@@ -1,5 +1,4 @@
 export { AnimatedVCaret } from './AnimatedVCaret'
-export { Checklist } from './Checklist'
 export { GreenTick } from './GreenTick'
 export { GrayscaleIcon } from './GrayscaleIcon'
 export { IconList } from './IconList'

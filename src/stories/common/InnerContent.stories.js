@@ -8,11 +8,9 @@ import { TEXT_XXS_ESC, TEXT_XXS, TEXT_XS, TEXT } from '../utils/Dummy'
 export default {
   title     :'common/InnerContent',
   component :InnerContent,
-  parameters:{
-    decorators:[
-      //storyfn => <div className="">{ storyfn() }</div>,
-    ]
-  }
+  decorators:[
+    //storyfn => <div className="">{ storyfn() }</div>,
+  ]
 }
 
 

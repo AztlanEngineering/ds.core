@@ -10,13 +10,13 @@ Classes :
   display: inline;
 
   line {
-    stroke: var(--z, var(--on-y, var(--black, black)));
+    stroke: var(--x, var(--paragraph));
     transition: stroke .3s;
   }
 
   &.active {
     line {
-      stroke: var(--z, var(--on-y, var(--black, black)));
+      stroke: var(--x, var(--paragraph));
     }
   }
 }

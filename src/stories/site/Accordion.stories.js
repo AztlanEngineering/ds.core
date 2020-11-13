@@ -24,13 +24,11 @@ export default {
     'Accordion.Item.Section':Accordion.Item.Section,
     'Accordion.Item.Divider':Accordion.Item.Divider
   },
-  parameters:{
-    decorators:[
-      storyfn => <div className='x-white b-dark-x p-u u2'>{ storyfn() }</div>,
-      /*   storyfn => <AplProvider endpoint={ endpoint }>{ storyfn() }</AplProvider>,
+  decorators:[
+    storyfn => <div className='x-white b-dark-x p-u u2'>{ storyfn() }</div>,
+    /*   storyfn => <AplProvider endpoint={ endpoint }>{ storyfn() }</AplProvider>,
          storyfn => <Router>{ storyfn() }</Router>, */
-    ]
-  }
+  ]
 }
 
 /*
@@ -55,7 +53,7 @@ export const Default = () => {
         subtitle={ faker.lorem.sentence() }
             >
       </Heading>,
-      children:<p>{ faker.lorem.paragraph(6) }</p>,
+      children :<p>{ faker.lorem.paragraph(6) }</p>,
       className:'y-background b-light-y'
     }
   }
@@ -95,7 +93,7 @@ export const PlusMinus = () => {
         subtitleClassName='x-subtitle c-light-x'
       >
       </Heading>,
-      children:<p className='c-x'>{ faker.lorem.paragraph(6) }</p>,
+      children :<p className='c-x'>{ faker.lorem.paragraph(6) }</p>,
       className:'y-background b-light-y'
     }
   }
@@ -130,8 +128,6 @@ export const Min = () => {
       title:<Heading
         headingClassName='h2 c-on-y'
         heading={ faker.lorem.sentence()}
-        //subtitle={ faker.lorem.sentence() }
-        //subtitleClassName='x-subtitle c-light-x'
       >
       </Heading>,
       children:<p className='c-x'>{ faker.lorem.paragraph(6) }</p>

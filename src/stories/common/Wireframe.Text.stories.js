@@ -8,11 +8,9 @@ import { Wireframe } from 'ui'
 export default {
   title     :'common/Wireframe.Text',
   component :Wireframe.Text,
-  parameters:{
-    decorators:[
-      /* storyfn => <div className="">{ storyfn() }</div>,*/
-    ]
-  }
+  decorators:[
+    /* storyfn => <div className="">{ storyfn() }</div>,*/
+  ]
 }
 
 const sizes = ['xs', 'sm', 'md', 'lg', 'xl']

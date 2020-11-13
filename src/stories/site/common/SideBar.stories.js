@@ -21,9 +21,8 @@ export default {
   subcomponents:{
     //SideBar.Item
   },
-  parameters:{
-    decorators:[
-      /*storyfn => <div
+  decorators:[
+    /*storyfn => <div
         className='g-sidebar b-z z-black'
         style={{height: '100%'}}
                  >
@@ -32,8 +31,7 @@ export default {
         <div className='b-x x-red g12 g9-md g10-lg'></div>
       </div>,
       */
-    ]
-  }
+  ]
 }
 
 export const Default = () => (

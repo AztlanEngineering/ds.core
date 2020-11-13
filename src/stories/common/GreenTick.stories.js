@@ -6,11 +6,9 @@ import { GreenTick } from 'ui'
 export default {
   title     :'common/GreenTick',
   component :GreenTick,
-  parameters:{
-    decorators:[
-      //storyfn => <div className="">{ storyfn() }</div>,
-    ]
-  }
+  decorators:[
+    //storyfn => <div className="">{ storyfn() }</div>,
+  ]
 }
 
 const sizes = [

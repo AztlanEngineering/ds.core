@@ -6,11 +6,9 @@ import { Subtitle } from 'ui'
 export default {
   title     :'common/Subtitle',
   component :Subtitle,
-  parameters:{
-    decorators:[
-      //storyfn => <div className="">{ storyfn() }</div>,
-    ]
-  }
+  decorators:[
+    //storyfn => <div className="">{ storyfn() }</div>,
+  ]
 }
 
 const variants = [

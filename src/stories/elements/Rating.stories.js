@@ -13,14 +13,12 @@ import { Rating } from 'ui'
 export default {
   title     :'elements/Rating',
   component :Rating,
-  parameters:{
-    decorators:[
-      storyfn => <div className='b-yellow p1'>{ storyfn() }</div>
-      /* storyfn => <div className="">{ storyfn() }</div>,
+  decorators:[
+    storyfn => <div className='b-yellow p1'>{ storyfn() }</div>
+    /* storyfn => <div className="">{ storyfn() }</div>,
          storyfn => <AplProvider endpoint={ endpoint }>{ storyfn() }</AplProvider>,
          storyfn => <Router>{ storyfn() }</Router>, */
-    ]
-  }
+  ]
 }
 
 const ratings_map = [
