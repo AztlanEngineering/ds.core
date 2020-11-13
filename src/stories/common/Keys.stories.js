@@ -50,4 +50,10 @@ export const Variant = () => (
   <Keys keys={['ctrl', 'k']}/>
 )
 
+export const Color = () => (
+  <Keys keys={['ctrl', 'k']}
+    className='x-red'
+  />
+)
+
 //Variant.parameters = storyParameters

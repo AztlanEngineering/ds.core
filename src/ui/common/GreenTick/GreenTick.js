@@ -14,6 +14,12 @@ if(!isBackend){
 
 const baseClassName = 'green_tick'
 
+
+/**
+ * `GreenTick` : An animated SVG Tick that indicates success. <br/>
+ * Colors : `--success` for the background, `--on-success` for the tick
+ */
+
 const GreenTick = ({
   id,
   className,

@@ -48,10 +48,36 @@ export const TestClasses = () =>
     />
   )
 
-export const TODO_Inline = () =>
-  variants.map(({ className, ...e },i) =>
+export const NoLink = () =>
+  variants.map(({link, ...e}) => e).map((e,i) =>
     <GrayscaleIcon
       { ...e }
+      key={ i }
+    />
+  )
+
+export const ObjectPosition = () =>
+  variants.map(({link, ...e}) => e).map((e,i) =>
+    <GrayscaleIcon
+      objectPosition='center center'
+      { ...e }
+      height='80px'
+      width='300px'
+      key={ i }
+    />
+  )
+
+export const ImgStyle = () =>
+  variants.map(({link, ...e}) => e).map((e,i) =>
+    <GrayscaleIcon
+      objectPosition='center center'
+      { ...e }
+      height='80px'
+      imgStyle={{
+        background:'red',
+        borderRadius:'.25em'
+      }}
+      width='300px'
       key={ i }
     />
   )

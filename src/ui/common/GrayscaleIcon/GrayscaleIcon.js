@@ -14,6 +14,11 @@ if(!isBackend){
 
 const baseClassName='grayscale_icon'
 
+
+/**
+ * `GrayscaleIcon` : An inline icon of, for instance, a news outlet. It is converted to grayscale. <br/>
+ * Colors : compatible with `ui-dark` theme.
+ */
 const GrayscaleIcon = ({
   id,
   className,
@@ -26,9 +31,34 @@ const GrayscaleIcon = ({
   alt,
   link,
 
-  objectPosition
+  objectPosition,
+
+  imgStyle
 }) => {
 
+  if (!link) return (
+    <span
+      className={
+        [
+          baseClassName,
+          className,
+          C.transition
+        ].filter(e => e).join(' ')
+      }
+      id={ id }
+      style={{ ...style, height, width }}
+      >
+      <img
+        src={ src }
+        alt={ alt }
+        style={{
+          ...imgStyle,
+          objectPosition,
+        }}
+      />
+    </span>
+
+  )
 
   return (
     <a
@@ -48,13 +78,8 @@ const GrayscaleIcon = ({
       <img
         src={ src }
         alt={ alt }
-        className={
-          C.content
-          //+ (? '':'')
-            + (className ? ' ' + className : '')
-        }
-        id={ id }
         style={{
+          ...imgStyle,
           objectPosition,
         }}
       />
@@ -85,7 +110,7 @@ GrayscaleIcon.propTypes = {
   /**
    *  The link that wraps the image
    */
-  link:PropTypes.string.isRequired,
+  link:PropTypes.string,
 
   /**
    *  The alt text
@@ -103,9 +128,14 @@ GrayscaleIcon.propTypes = {
   width:PropTypes.string,
 
   /**
-   *  The position of the object in css
+   * Where is the image pinned, for instance `center center` or `left bottom`
    */
   objectPosition:PropTypes.string,
+
+  /**
+   * The JSX-Written, css styles to apply to the child image.
+   */
+  imgStyle:PropTypes.object,
     
 }
 

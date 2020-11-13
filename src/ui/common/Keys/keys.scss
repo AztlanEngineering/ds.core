@@ -7,22 +7,26 @@ Classes :
 
 */
 
+$default-color:var(--x, var(--subtitle));
+$border-radius:var(--r);
+$key-dimension:2em;
+
 .keys {
   .key {
-    border: 1px solid var(--z, var(--x, var(--subtitle)));
-    border-radius: var(--r);
-    padding-left:.2em;
-    height: 2em;
-    width: 2em;
-    display:inline-block;
-    color:var(--z, var(--x, var(--subtitle)));
+    border: 1px solid $default-color;
+    border-radius: $border-radius;
+    color: $default-color;
+    display: inline-block;
+    height: $key-dimension;
+    padding-left: .2em;
+    width: $key-dimension;
 
     & + .key {
       margin-left: .15em;
     }
 
     &.long {
-      width:4em;
+      width: $key-dimension * 2;
     }
   }
 }

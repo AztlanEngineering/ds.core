@@ -32,7 +32,7 @@ export const ColorVariant = () => {
     <AnimatedVCaret
       active={ active }
       setActive={ setActive }
-      id='myarrow'
+      id='colorarrow'
       className='x-secondary y-primary'
       height='240px'
     />
@@ -47,7 +47,7 @@ export const SizeVariant = () => {
       <AnimatedVCaret
         active={ active }
         setActive={ setActive }
-        id='myarrow'
+        id='myarrowsmall'
         className='c-yellow'
         height='120px'
       />
@@ -69,7 +69,7 @@ export const Bolder = () => {
     <AnimatedVCaret
       active={ active }
       setActive={ setActive }
-      id='myarrow'
+      id='myarrowbold'
       className='c-violet'
       strokeWidth={20}
       width='300px'
@@ -84,7 +84,7 @@ export const Speed = () => {
     <AnimatedVCaret
       active={ active }
       setActive={ setActive }
-      id='myarrow'
+      id='myarrowspeed'
       className='c-red'
       duration={ 5 }
     />

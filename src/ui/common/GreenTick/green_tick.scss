@@ -8,11 +8,11 @@ $tickDuration:0.8s;
 
 $tickDasharrayOutline:480px;
 
-$tickStroke:var(--on-green);
+$tickStroke:var(--on-success);
 $tickStrokeDashOffset:110;
 $tickStrokeDasharray:110;
 $tickStrokeWidth:10;
-$tickFill:var(--green);
+$tickFill:var(--success);
 
 @keyframes outline {
   0% {
