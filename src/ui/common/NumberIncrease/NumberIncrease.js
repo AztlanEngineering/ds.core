@@ -1,6 +1,6 @@
 /* @fwrlines/generator-react-component 1.0.1 */
 import * as React from 'react'
-import { useState }from 'react'
+import { useState, useMemo, useEffect }from 'react'
 import PropTypes from 'prop-types'
 
 import { useInterval } from '@fwrlines/utils'
@@ -10,12 +10,17 @@ import { useInterval } from '@fwrlines/utils'
 //Relative imports
 import { isBackend } from 'ui/isBackend'
 
+/*
 if(!isBackend) {
   import('./number_increase.scss')
-}
+}*/
 
 const baseClassName = 'number_increase'
 
+/**
+ * `NumberIncrease` can be used to display a number that dynamically increases. It's good to use in conjunction with a revealer, like `react-reveal`.
+ * 
+ */
 const NumberIncrease = ({
   id,
   className,
@@ -26,16 +31,32 @@ const NumberIncrease = ({
 
   suffix,
   suffixClassName,
+  suffixStyle,
 
   as:Wrapper,
 }) => {
 
-  const interval = duration / number
+  const { interval, addEveryTick  } = useMemo(
+    () => {
+      const baseInterval = duration / number
+      const minimumInterval = 30
+      return {
+        interval    :Math.max(baseInterval, minimumInterval),
+        addEveryTick:(baseInterval > minimumInterval) ? 1 : (minimumInterval / baseInterval) * 1
+      }
+    }
+    ,[ duration, number ]
+  )
+
+
   let [count, setCount] = useState(0)
+
+  useEffect(() => {console.log(number, duration, interval)}, [duration, number])
+
   const condition = count < number
 
   useInterval(() => {
-    setCount(count + 1)
+    setCount(Math.min(count + addEveryTick, number))
   }, interval, condition)
 
   if (number < 0) {
@@ -54,7 +75,7 @@ const NumberIncrease = ({
         style={ style }
       >
         { count }
-        <span className={ suffixClassName }>
+        <span className={ suffixClassName } style={ suffixStyle }>
           { suffix }
         </span>
       </Wrapper>
@@ -99,9 +120,17 @@ NumberIncrease.propTypes = {
   suffixClassName:PropTypes.string,
 
   /**
+   * The JSX-Written, css styles to apply to the isuffix of the element.
+   */
+  suffixStyle:PropTypes.object,
+
+  /**
    * With html tag to use
    */
-  as:PropTypes.string,
+  as:PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.object
+  ]),
 
   /*
   : PropTypes.shape({
@@ -116,7 +145,8 @@ NumberIncrease.propTypes = {
 }
 
 NumberIncrease.defaultProps = {
-  as:'p',
+  as      :'p',
+  duration:1000,
 }
 
 export default NumberIncrease
