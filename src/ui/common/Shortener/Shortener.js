@@ -121,12 +121,12 @@ Shortener.propTypes = {
   //as: PropTypes.string,
 
   /**
-   * How many separated element to accept before the read more
+   * How many separated elements to accept before the read more. This may mean how many words, or how many letters if `countLetters=true`
    */
   limit:PropTypes.number,
 
   /**
-   * Which separator to use
+   * Which separator to use to count words. This is only used in if `countLetters=false`.
    */
   separator:PropTypes.string.isRequired,
 

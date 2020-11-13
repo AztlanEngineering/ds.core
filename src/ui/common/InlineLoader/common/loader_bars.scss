@@ -5,8 +5,10 @@ Classes :
 
 */
 
+$stroke-color:var(--x, var(--primary));
+
 svg.loader_bars {
   line {
-    stroke: var(--x, var(--primary));
+    stroke: $stroke-color;
   }
 }

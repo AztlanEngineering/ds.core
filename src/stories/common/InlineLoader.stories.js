@@ -40,14 +40,23 @@ const item_map=[
   }
 ]
 
-export const Default = () =>
+export const Default = () =>(
+  <>
   <InlineLoader
-    height='200'
+    height='100'
     loaderClassName='x-orange'
   >
   </InlineLoader>
+  <InlineLoader
+    height='100'
+    type='circle'
+    loaderClassName='x-green'
+  >
+  </InlineLoader>
+  </>
+    )
 
-export const Variant = () =>
+export const Variant = () =>(
   <>
     {
       item_map.map((e,i) =>
@@ -65,9 +74,9 @@ export const Variant = () =>
         </div>
       )
     }
-  </>
+  </>)
 
-export const Circle = () =>
+export const Circle = () =>(
   <>
     {
       item_map.map((e,i) =>
@@ -86,5 +95,5 @@ export const Circle = () =>
         </div>
       )
     }
-  </>
+  </>)
 

@@ -20,7 +20,7 @@ const baseClassName = 'animated_v_caret'
 
 /**
  * `AnimatedVCaret` : An animated caret to be associated with the opening or closing of a ui element, like an accordion or menu. <br/>
- * Colors : `--x`, defaults to `--paragraph`
+ * color : `--x`, defaults to `--paragraph`
  */
 const AnimatedVCaret = ({
   id:userId,

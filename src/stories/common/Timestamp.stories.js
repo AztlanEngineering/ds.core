@@ -70,7 +70,9 @@ export const DistanceFormatMaxDays = () => (
       time={ subDays(Date.now(), 3) }
       enabledFormats={['distance','date']}
       distanceMaxDays={ 4 }
-    />
+    /> 
+    <br />
+
     But this should appear as date
     <Timestamp
       time={ subDays(Date.now(), 5) }

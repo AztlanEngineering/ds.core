@@ -14,11 +14,11 @@ svg.progress_bar {
   width: 100%;
 
   [id^="active"] {
-    stroke-dashoffset: var(--do, 50);
+    stroke-dashoffset: var(--stroke-dashoffset, 50);
     transition: all $transitionDuration;
   }
 
   rect[id^="pb_back"] {
-    fill: var(--fill, var(--x, var(--primary)));
+    fill: var(--x, var(--primary));
   }
 }

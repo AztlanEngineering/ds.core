@@ -19,15 +19,14 @@ if(!isBackend) {
 const baseClassName = 'progress_bar'
 
 /**
- * Use `ProgressBar` to
- * Has color `x`
+ * `ProgressBar` represents the state of numeric progress on a scale.<br/>
+ * fill color: `--x`, defaults to `--primary`
  */
 const ProgressBar = ({
   id:userId,
   className,
   style,
 
-  rectClassName,
   strokeWidth,
   gradientMap,
 
@@ -89,7 +88,7 @@ const ProgressBar = ({
           strokeDasharray='100'
           id={ `active${localId}` }
           style={{
-            '--do':Math.min(Math.max(maximum - current, 0), maximum)
+            '--stroke-dashoffset':Math.min(Math.max(maximum - current, 0), maximum)
           }}
           stroke='white'
         />
@@ -100,12 +99,9 @@ const ProgressBar = ({
           width='100'
           height={ strokeWidth }
           id={`pb_back${localId}`}
-          className={
-            rectClassName ? rectClassName : ''
-          }
           mask={`url(#pb_mask${localId})`}
-          style={{
-            '--fill':gradientMap && `url(#pbg${localId})`
+          style={ gradientMap && {
+            '--x':`url(#pbg${localId})`
 				  }}
         />
       </g>
@@ -130,14 +126,9 @@ ProgressBar.propTypes = {
   style:PropTypes.object,
 
   /**
-   * An html class to pass to the main rectangle
-   */
-  rectClassName:PropTypes.string,
-
-  /**
    * The height of the bar, sent as svg property strokewidth
    */
-  strokeWidth:PropTypes.number,
+  strokeWidth:PropTypes.number.isRequired,
 
   /**
    * The svg map for the gradient background
@@ -151,12 +142,12 @@ ProgressBar.propTypes = {
   /**
    * The maximum value
    */
-  maximum:PropTypes.number,
+  maximum:PropTypes.number.isRequired,
 
   /**
    * The current value
    */
-  current:PropTypes.number,
+  current:PropTypes.number.isRequired,
 
 }
 

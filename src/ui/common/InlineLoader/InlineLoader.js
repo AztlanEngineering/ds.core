@@ -16,6 +16,11 @@ if(!isBackend) {
 
 const baseClassName = 'inline_loader'
 
+/**
+ * `InlineLoader` displays an inline selected loader.<br/>
+ * `LoaderBars` color : ` var(--x, var(--primary))` <br/>
+ * `LoaderCircle` color : ` var(--x, var(--primary))` <br/>
+ */
 const InlineLoader = ({
   id,
   className,
@@ -101,7 +106,7 @@ InlineLoader.propTypes = {
   height:PropTypes.string.isRequired,
 
   /**
-   * The duration of the animation loop in seconds
+   * The duration of the animation loop in seconds. The loaders provide their own default (2s for LoaderBars and 1.25s for LoaderCircle).
    */
   animationDuration:PropTypes.number,
 
@@ -118,7 +123,7 @@ InlineLoader.propTypes = {
   /**
    * Which type of loader
    */
-  type:PropTypes.oneOf(['circle','bars'])
+  type:PropTypes.oneOf(['circle','bars']).isRequired
 }
 
 InlineLoader.defaultProps = {
