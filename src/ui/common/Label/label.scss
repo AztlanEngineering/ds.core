@@ -6,14 +6,13 @@ Classes :
 */
 $background: var(--x, transparent);
 $regular-border-radius: var(--r);
-$color: var(--on-x, var(--black));
+$color: var(--on-x, var(--subtitle));
 $padding-top:.3em;
 $padding-side:.5em;
 $padding-bottom:.4em;
 $padding:$padding-top $padding-side $padding-bottom;
 $rounded-border-radius:$padding-top + $padding-bottom + 1em;
-$circle-min-dimension:$border-radius;
-//$fontFamily:var(--font-d) !default;
+//$circle-min-dimension:$rounded-border-radius;
 $vertical-align-in-headings:top;
 $margin-bottom:.3em;
 $font-weight:bold;
@@ -34,8 +33,8 @@ $line-height:.9em;
 
   &.rounded {
     border-radius: $rounded-border-radius;
-    min-height: $circle-min-dimension;
-    min-width: $circle-min-dimension;
+    //min-height: $circle-min-dimension;
+    //min-width: $circle-min-dimension;
   }
 
   /*

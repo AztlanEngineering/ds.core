@@ -1,5 +1,6 @@
 /* @fwrlines/generator-react-component 1.0.1 */
 import * as React from 'react'
+import { useMemo } from 'react'
 import PropTypes from 'prop-types'
 
 
@@ -7,6 +8,8 @@ import PropTypes from 'prop-types'
 /* Config */
 import C from 'ui/cssClasses'
 import { isBackend } from 'ui/isBackend'
+
+import { generateRandomString } from '@fwrlines/utils'
 
 //Relative imports
 if(!isBackend) {
@@ -17,10 +20,10 @@ const baseClassName = 'animated_v_caret'
 
 /**
  * `AnimatedVCaret` : An animated caret to be associated with the opening or closing of a ui element, like an accordion or menu. <br/>
- * Colors : `--x`, defaults to `--paragraph`
+ * color : `--x`, defaults to `--paragraph`
  */
 const AnimatedVCaret = ({
-  id,
+  id:userId,
   className,
   style,
 
@@ -38,18 +41,25 @@ const AnimatedVCaret = ({
   setActive,
 }) =>
 {
-  const lpath_id = (id ? id + '_' + 'lpath' : 'cdown_lpath')
-  const rpath_id = (id ? id + '_' + 'rpath' : 'cdown_rpath')
+
+  const localId = useMemo(() => userId || `animated_v_caret_${generateRandomString()}`, [])
+
+  /*
+  const lpathId = useMemo(() => `lpath${localId}`)
+  const rpathId = useMemo(() => `rpath${localId}`)
+  */
 
   const swd = strokeWidth / 2 //strokeWidthDistance
 
+  /*
   const lpath_initial = `M ${swd} 50 L 50 ${100 - swd}`
   const rpath_initial = `M ${100 - swd} 50 L 50 ${100 - swd}`
 
   const lpath_active = `M ${swd} 50 L 50 ${swd}`
   const rpath_active = `M ${swd} 50 L 50 ${swd}`
+  */
 
-  const listenToId = listenerId || id
+  const listenToId = listenerId || localId
 
   //const subId = (sub) => id ? id + '_' + sub : sub
 
@@ -63,7 +73,7 @@ const AnimatedVCaret = ({
           active && C.active
         ].filter(e => e).join(' ')
       }
-      id={ id }
+      id={ localId }
       style={ style }
       onClick={ () => setActive(!active) }
     >

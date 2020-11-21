@@ -4,6 +4,10 @@ Classes :
 .loader_circle : default
 
 */
+
+$animation-duration:var(--animation-duration, 2s);
+$stroke-color:var(--x, var(--primary));
+
 @keyframes rotate {
   100% {
     transform: rotate(360deg);
@@ -30,11 +34,11 @@ Classes :
 svg.loader_circle {
   transform-origin: center center;
   margin: auto;
-  animation: rotate 2s linear infinite;
+  animation: rotate $animation-duration linear infinite;
 
   circle {
-    animation: dash-anim 2s ease-in-out infinite;
-    stroke: var(--x, var(--primary));
+    animation: dash-anim $animation-duration ease-in-out infinite;
+    stroke: $stroke-color;
     stroke-dasharray: 1, 200;
     stroke-dashoffset: 0;
   }

@@ -49,7 +49,12 @@ export const Default = () => (
 )
 
 export const Rounded = () => (
-  <Label className='x-red'>Round Label</Label>
+  <Label
+    className='x-red'
+    rounded
+  >
+    Round Label
+  </Label>
 )
 
 export const Variant = () => (
@@ -72,7 +77,6 @@ export const Colors = () => (
       className={ 'x-'+e}
       rounded={Boolean( i % 2 )}
     >
-      {console.log('id', i % 2)}
       { variants[1].content || 'blah'}
     </Label>
   )

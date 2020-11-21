@@ -120,12 +120,12 @@ LoaderBars.propTypes = {
   /**
    * The SVG property stroke-width
    */
-  strokeWidth:PropTypes.string,
+  strokeWidth:PropTypes.string.isRequired,
 
   /**
    * The duration of the animation in seconds
    */
-  animationDuration:PropTypes.number,
+  animationDuration:PropTypes.number.isRequired,
 
 }
 

@@ -27,6 +27,8 @@ const LoaderCircle = ({
 
   strokeLinecap,
   strokeWidth,
+
+  animationDuration
 }) =>
 {
   const totalHeight = 40
@@ -49,6 +51,9 @@ const LoaderCircle = ({
       preserveAspectRatio='xMinYMin meet'
       width={width || (!height ? '120' : undefined)}
       height={height || ( !width ? totalHeight : undefined)}
+      style={{
+       '--animation-duration':`${animationDuration}s`
+      }}
     >
       <circle
         className='path'
@@ -92,12 +97,18 @@ LoaderCircle.propTypes = {
   /**
    * The SVG property stroke-width
    */
-  strokeWidth:PropTypes.string,
+  strokeWidth:PropTypes.string.isRequired,
+
+  /**
+   * The duration of the animation in seconds
+   */
+  animationDuration:PropTypes.number.isRequired,
 }
 
 LoaderCircle.defaultProps = {
   strokeLinecap:'round',
   strokeWidth  :'5',
+  animationDuration:2
 }
 
 export default LoaderCircle

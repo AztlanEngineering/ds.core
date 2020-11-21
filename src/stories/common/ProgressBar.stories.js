@@ -31,6 +31,10 @@ export const Default = () => (
   <ProgressBar/>
 )
 
+export const Color = () => (
+  <ProgressBar className='x-red' current={80}/>
+)
+
 export const Width = () => (
   <ProgressBar strokeWidth={20}/>
 )
@@ -44,6 +48,7 @@ export const Values = () => (
 
 export const Gradient = () => (
   <ProgressBar
+    current={90}
     gradientMap={
       [
         { offset: '0%', 'stopColor': 'var(--blue)' },
@@ -63,8 +68,8 @@ export const State = () => {
     <>
       <ProgressBar current={value}/>
       <div>
-        <button onClick={() => setValue(value - 10)}>Decrease</button>
-        <button onClick={() => setValue(value + 10)}>Increase</button>
+        <button onClick={() => setValue(Math.max(0, value - 10))}>Decrease</button>
+        <button onClick={() => setValue(Math.min(100, value + 10))}>Increase</button>
       </div>
     </>
   ) }

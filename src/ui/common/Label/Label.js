@@ -17,8 +17,10 @@ if(!isBackend) {
 const baseClassName = 'label'
 
 /**
- * Label: <br/>
- * background: var()
+ * `Label` allows you to emphasize an inline information<br/>
+ * color: `var(--on-x, var(--subtitle))`<br/>
+ * background:`var(--x, transparent)`<br/>
+ * border-radius:`var(--r)`
  */
 
 const Label = ({
