@@ -73,6 +73,42 @@ export const Unlimited = () => (
   </Shortener>
 )
 
+export const CountLetters = () => (
+  <Shortener
+    countLetters
+    limit={ 20 }
+    style={{
+      maxWidth:'300px'
+    }}
+  >
+    { faker.lorem.paragraph(1) }
+  </Shortener>
+)
+
+export const ReadMore = () => (
+  <Shortener
+    readMore
+    limit={ 3 }
+    style={{
+      maxWidth:'300px'
+    }}
+  >
+    { faker.lorem.paragraph(1) }
+  </Shortener>
+)
+
+export const Min = () => (
+  <Shortener
+    min
+    limit={ 4 }
+    style={{
+      maxWidth:'300px'
+    }}
+  >
+    { faker.lorem.paragraph(1) }
+  </Shortener>
+)
+
 export const Separator = () => (
   <Shortener
     separator={ '-' }

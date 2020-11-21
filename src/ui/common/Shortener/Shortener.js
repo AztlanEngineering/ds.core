@@ -19,16 +19,16 @@ import messages from './messages'
    import styles from './shortener.scss' */
 import { isBackend } from 'ui/isBackend'
 
-if(!isBackend) {
+/*if(!isBackend) {
   import('./shortener.scss')
-}
+}*/
 
 const baseClassName = 'shortener'
 
 
 /**
- * Use `Shortener` to
- * Has color `x`
+ * `Shortener` allows you to shorten a long text with a `Read-more` button at the end to show the complete text if needed.
+ *
  */
 const Shortener = ({
   id,
