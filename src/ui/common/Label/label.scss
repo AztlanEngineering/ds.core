@@ -12,7 +12,7 @@ $padding-side:.5em;
 $padding-bottom:.4em;
 $padding:$padding-top $padding-side $padding-bottom;
 $rounded-border-radius:$padding-top + $padding-bottom + 1em;
-$circle-min-dimension:$border-radius;
+$circle-min-dimension:$rounded-border-radius;
 //$fontFamily:var(--font-d) !default;
 $vertical-align-in-headings:top;
 $margin-bottom:.3em;
