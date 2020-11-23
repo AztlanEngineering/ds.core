@@ -3,8 +3,8 @@ import { linkTo } from '@storybook/addon-links'
 import { Welcome } from '@storybook/react/demo'
 
 export default {
-  title    :'ds-core',
-  component:Welcome,
+  title    :'Fwrlines Design System / Core',
+  //component:Welcome,
 }
 
 export const ToStorybook = () => (
