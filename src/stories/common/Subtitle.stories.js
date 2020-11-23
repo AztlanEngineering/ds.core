@@ -17,7 +17,7 @@ const variants = [
     link:''
   },
   {
-    text:'@Meccamico',
+    text:'@fwrlines',
     link:''
   },
   {
