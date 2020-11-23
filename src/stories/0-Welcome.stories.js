@@ -7,8 +7,16 @@ export default {
   component:Welcome,
 }
 
-export const ToStorybook = () => <Welcome showApp={linkTo('Button')} />
+export const ToStorybook = () => (
+  <>
+    <h1>Welcome to Fwrlines / Design System</h1>
+    <p>Use the left menu to navigate in between the components.</p>
+    <p>The source code of this library is available on{' '}
+      <a href="https://github.com/fwrlines/ds.core">GitHub</a>.
+    </p>
+  </>
+)
 
 ToStorybook.story = {
-  name:'to Storybook',
+  name:'Welcome',
 }

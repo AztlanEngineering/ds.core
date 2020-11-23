@@ -41,7 +41,7 @@ export const Default = () => {
   }
   return (
     <SiteContextProvider config={ config }>
-      This text is inside the context
+      No visual test required.
     </SiteContextProvider>
   )
 
@@ -53,7 +53,8 @@ export const Theme = () => {
     SITE_CANONICAL:'https://internet1999.org',
     FACEBOOK      :'facebook_id',
     INSTAGRAM     :'@superaccount',
-    SUPPORT_EMAIL :'support@support.com'
+    SUPPORT_EMAIL :'support@support.com',
+    SITE_DESCRIPTION:faker.lorem.paragraph(10)
   }
 
   const ChildCo = () => {
@@ -67,7 +68,8 @@ export const Theme = () => {
       <div
         className={
           [
-            C.themes[userTheme]
+            C.themes[userTheme],
+            'y-background b-y'
           ].filter(e => e).join(' ')
         }
       >
