@@ -3,7 +3,7 @@ import { linkTo } from '@storybook/addon-links'
 import { Welcome } from '@storybook/react/demo'
 
 export default {
-  title    :'Fwrlines Design System / Core',
+  title    :'ds.core',
   //component:Welcome,
 }
 
