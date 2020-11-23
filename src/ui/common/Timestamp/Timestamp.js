@@ -28,8 +28,7 @@ const baseClassName = 'timestamp'
 
 
 /**
- * Use `Timestamp` to
- * Has color `x`
+ * `Timestamp`: An interchangeble label to show the time in unix and date format. It can have different prefixes depending on where its used.
  */
 const Timestamp = ({
   id,
@@ -106,17 +105,14 @@ Timestamp.propTypes = {
   style:PropTypes.object,
 
   /**
+   * The time to display in unix
+   */
+  time:PropTypes.number.isRequired,
+
+  /**
    *  The children JSX
    */
   prefix:PropTypes.node,
-
-  /**
-   * Which html tag to use
-   */
-  as:PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.object
-  ]),
 
   /**
    * Formats
@@ -146,9 +142,12 @@ Timestamp.propTypes = {
   dateFormat:PropTypes.string.isRequired,
 
   /**
-   * The time to display
+   * Which html tag to use
    */
-  time:PropTypes.number.isRequired,
+  as:PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.object
+  ]),
 }
 
 Timestamp.defaultProps = {

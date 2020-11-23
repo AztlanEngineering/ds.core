@@ -47,7 +47,7 @@ export const Default = () => (
 
 export const DateFormat = () => (
   <Timestamp
-    time={ Date.now() }
+    time={ Number(Date.now()) }
     enabledFormats={['date']}
     dateFormat={'yyyy-MM-dd\' at \'HH:mm'}
   />
@@ -57,7 +57,7 @@ export const DateFormat = () => (
 
 export const DistanceFormat = () => (
   <Timestamp
-    time={ subDays(Date.now(), 3) }
+    time={ Number(subDays(Date.now(), 3)) }
     enabledFormats={['distance','date']}
   />
 
@@ -67,15 +67,15 @@ export const DistanceFormatMaxDays = () => (
   <>
     This should appear as distance
     <Timestamp
-      time={ subDays(Date.now(), 3) }
+      time={ Number(subDays(Date.now(), 3)) }
       enabledFormats={['distance','date']}
       distanceMaxDays={ 4 }
-    /> 
+    />
     <br />
 
     But this should appear as date
     <Timestamp
-      time={ subDays(Date.now(), 5) }
+      time={ Number(subDays(Date.now(), 5)) }
       enabledFormats={['distance','date']}
       distanceMaxDays={ 4 }
     />
@@ -85,7 +85,7 @@ export const DistanceFormatMaxDays = () => (
 
 export const RelativeFormat = () => (
   <Timestamp
-    time={ subDays(Date.now(), 5) }
+    time={ Number(subDays(Date.now(), 5)) }
     enabledFormats={['relative','date']}
   />
 
@@ -95,13 +95,13 @@ export const RelativeFormatMaxDays = () => (
   <>
     This should appear as distance
     <Timestamp
-      time={ subDays(Date.now(), 3) }
+      time={ Number(subDays(Date.now(), 3)) }
       enabledFormats={['relative','date']}
       relativeMaxDays={ 4 }
     />
     But this should appear as date
     <Timestamp
-      time={ subDays(Date.now(), 5) }
+      time={ Number(subDays(Date.now(), 5)) }
       enabledFormats={['relative','date']}
       relativeMaxDays={ 4 }
     />
@@ -113,7 +113,7 @@ export const RelativeFormatMaxDays = () => (
 
 export const Prefix = () => (
   <Timestamp
-    time={ Date.now() }
+    time={ Number(Date.now()) }
     prefix={
       <strong>
         Updated :
