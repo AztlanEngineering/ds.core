@@ -31,7 +31,7 @@ module.exports = function (api) {
         '@fwrlines/ds':'./src/ui'
       }
     }],
-    '@babel/plugin-proposal-class-properties',
+    ['@babel/plugin-proposal-class-properties', { 'loose': true }],
     ['babel-plugin-inline-import', {
       'extensions':[
         '.html',
