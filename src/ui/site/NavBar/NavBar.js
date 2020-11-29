@@ -208,6 +208,7 @@ const NavBar = ({
       }
       { progressBar &&
         <PageProgressBar
+          strokeWidth={ 5 }
           spyOn={ (typeof progressBar !== 'boolean') && progressBar }
           { ...{
             style:{
