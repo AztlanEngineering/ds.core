@@ -85,18 +85,6 @@ export const CountLetters = () => (
   </Shortener>
 )
 
-export const ReadMore = () => (
-  <Shortener
-    readMore
-    limit={ 3 }
-    style={{
-      maxWidth:'300px'
-    }}
-  >
-    { faker.lorem.paragraph(1) }
-  </Shortener>
-)
-
 export const Min = () => (
   <Shortener
     min

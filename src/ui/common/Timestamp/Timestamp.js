@@ -28,14 +28,14 @@ const baseClassName = 'timestamp'
 
 
 /**
- * `Timestamp`: An interchangeble label to show the time in unix and date format. It can have different prefixes depending on where its used.
+ * `Timestamp`: An customizable component to show the time in Unix, date, distance and relative date format. By clicking on the timestamp the user can cycle through the enabled formats.
  */
 const Timestamp = ({
   id,
   className,
   style,
+
   time,
-  prefix,
   enabledFormats,
   distanceMaxDays,
   relativeMaxDays,
@@ -82,8 +82,6 @@ const Timestamp = ({
       onClick={ (enabledFormats.length > 1) ? onClick : undefined }
 
     >
-      { prefix && prefix }
-      { prefix && ' ' }
       { formatMap[currentDisplay](Number(time)) }
     </Element>
   )}
@@ -108,11 +106,6 @@ Timestamp.propTypes = {
    * The time to display in unix
    */
   time:PropTypes.number.isRequired,
-
-  /**
-   *  The children JSX
-   */
-  prefix:PropTypes.node,
 
   /**
    * Formats

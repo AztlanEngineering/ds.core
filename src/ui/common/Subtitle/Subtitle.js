@@ -18,7 +18,7 @@ if(!isBackend) {
 const baseClassName = 'subtitle'
 
 /**
- * `subtitle` a label to keep small text in it with a gray color that indicates a subtitle <br />
+ * `Subtitle` a label to keep small text in it with a gray color that indicates a subtitle <br />
  * color: `var(--subtitle)`
  */
 
@@ -27,10 +27,11 @@ const Subtitle = ({
   className,
   style,
   children,
-  upper,
-  as:Element='p'
-}) => {
 
+  as:Element='p',
+
+  upper
+}) => {
 
   return (
     <Element
@@ -71,17 +72,17 @@ Subtitle.propTypes = {
   children:PropTypes.node,
 
   /**
-   * Apply special styles related to capitalization
-   */
-  upper:PropTypes.bool,
-
-  /**
    * With html tag to use
    */
   as:PropTypes.oneOfType([
     PropTypes.string,
     PropTypes.node
   ]),
+
+  /**
+   * Apply special styles related to capitalization
+   */
+  upper:PropTypes.bool,
 }
 
 Subtitle.defaultProps = {

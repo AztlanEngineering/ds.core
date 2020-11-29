@@ -42,7 +42,6 @@ const Shortener = ({
   separator,
   min,
 
-  readMore,
   countLetters,
 }) => {
 
@@ -69,20 +68,19 @@ const Shortener = ({
         <>
           { excerpt }
           { '... ' }
-          { readMore &&
-            <a
-              href='#'
-              onClick={ (e) => {
-                e.preventDefault()
-                e.stopPropagation()
-                setDisplayFull(true) }
-              }
-            >
-              { min ?
-                <FormattedMessage {...messages.show} /> :
-                <FormattedMessage {...messages.readMore} />
-              }
-            </a>}
+          <a
+            href='#'
+            onClick={ (e) => {
+              e.preventDefault()
+              e.stopPropagation()
+              setDisplayFull(true) }
+            }
+          >
+            { min ?
+              <FormattedMessage {...messages.show} /> :
+              <FormattedMessage {...messages.readMore} />
+            }
+          </a>
         </>:
         text
       }
@@ -136,11 +134,6 @@ Shortener.propTypes = {
   min:PropTypes.bool,
 
   /**
-   * Whether to display a read more
-   */
-  readMore:PropTypes.bool,
-
-  /**
    * Whether to count letters instead of using a split
    */
   countLetters:PropTypes.bool,
@@ -162,7 +155,6 @@ Shortener.defaultProps = {
   separator   :' ',
   limit       :20,
   min         :false,
-  readMore    :true,
   countLetters:false
 
   /* height:'2.2em',

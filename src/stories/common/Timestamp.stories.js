@@ -110,17 +110,3 @@ export const RelativeFormatMaxDays = () => (
 )
 
 //Default.parameters = storyParameters
-
-export const Prefix = () => (
-  <Timestamp
-    time={ Number(Date.now()) }
-    prefix={
-      <strong>
-        Updated :
-      </strong>
-
-    }
-  />
-)
-
-//Variant.parameters = storyParameters
