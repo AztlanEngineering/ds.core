@@ -53,7 +53,10 @@ export const Default = () => {
 
   return (
     <SiteContextProvider config={ config }>
-      <Footer key='1'>
+      <Footer key='1' end={
+        <p>© Mysite { (new Date).getFullYear() }</p>
+
+        }>
         <Footer.Main
           key='2'
           className='b-y y-yellow uc sm-ul'

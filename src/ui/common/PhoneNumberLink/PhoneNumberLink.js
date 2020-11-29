@@ -1,26 +1,11 @@
 /* @fwrlines/generator-react-component 2.5.1 */
 import * as React from 'react'
-//import {} from 'react'
 import PropTypes from 'prop-types'
+import qs from 'query-string'
 
-
-
-
-//Intl
-
-/* import { FormattedMessage} from "react-intl";
-   import messages from "./messages";
-    <FormattedMessage {...messages.title} /> */
-
-//Config
-
-//import C from 'ui/cssClasses'
-
-/* Relative imports
-   import styles from './phone_number_link.scss' */
+// Local Imports
 import { isBackend } from 'ui/isBackend'
 
-import qs from 'query-string'
 
 if(!isBackend) {
   import('./phone_number_link.scss')
@@ -28,11 +13,8 @@ if(!isBackend) {
 
 const baseClassName = 'phone_number_link'
 
-
-
 /**
- * Use `PhoneNumberLink` to
- * Has color `x`
+ * Use `PhoneNumberLink` to display an interactive link on mobile, to open either the phone app or the Whatsapp app.
  */
 const PhoneNumberLink = ({
   id,
@@ -115,16 +97,10 @@ PhoneNumberLink.propTypes = {
    */
   icon:PropTypes.string,
 
-  /*
-  : PropTypes.shape({
-    id: PropTypes.string.isRequired,
-    title: PropTypes.string.isRequired,
-    state: PropTypes.string.isRequired,
-  }),
-  : PropTypes.func,
-  : PropTypes.func,
-  : PropTypes.oneOf(['', ''])
-  */
+  /**
+   * The default message to send on whatsapp.
+   */
+  whatsappText:PropTypes.string,
 }
 
 PhoneNumberLink.defaultProps = {

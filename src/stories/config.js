@@ -50,8 +50,8 @@ const ALL_COLORS = [
   ...MODALS
 ]
 
-const FONT_FAMILY_HEADINGS = 'pxg'
-const FONT_FAMILY_PARAGRAPH = 'us'
+const FONT_FAMILY_HEADINGS = 'headings'
+const FONT_FAMILY_PARAGRAPH = 'paragraph'
 
 export {
   SIZES,

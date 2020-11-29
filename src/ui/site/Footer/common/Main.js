@@ -53,6 +53,7 @@ const Main = ({
     'FACEBOOK',
     'INSTAGRAM',
     'TWITTER',
+    'YOUTUBE',
     'HOME_URL',
     'SITE_DESCRIPTION'
   ]
@@ -81,6 +82,10 @@ const Main = ({
         url :cv.TWITTER,
         name:'twitter'
       },
+      {
+        url :cv.YOUTUBE,
+        name:'youtube'
+      },
     ]
 
     return ntks.filter(e => e.url)
@@ -96,7 +101,7 @@ const Main = ({
         <li key={i}>
           <a
             href={ typeof e.url === 'string' ? e.url : intl.formatMessage(e.url.props) }
-            rel='noreferrer nofollow'
+            //rel='noreferrer nofollow'
             target='_blank'
           >
             { e.name }
@@ -125,17 +130,19 @@ const Main = ({
       style={ style }
     >
       <div className=''>
-        <Link to={ cv.HOME_URL }>
-          <Heading
-            heading={ cv.SITE_NAME }
-            headingClassName='h3'
-            subtitleAs='div'
-            subtitle={
-              socials.length ?
-                <SocialsComp/> : undefined
-            }
-          />
-        </Link>
+        <Heading
+          heading={
+            <Link to={ cv.HOME_URL } className='y-heading c-y'>
+              { cv.SITE_NAME }
+            </Link>
+          }
+          headingClassName='h3'
+          subtitleAs='div'
+          subtitle={
+            socials.length ?
+              <SocialsComp/> : undefined
+          }
+        />
       </div>
       { cv.SITE_DESCRIPTION &&
         <div className=''>
