@@ -31,15 +31,15 @@ const PhoneNumberLink = ({
 
   const icon = userIcon || (whatsapp ? '7' : '6')
 
-  const whatsappText = userWhatsappText ? `&${qs.stringify({text:userWhatsappText})}` : ''
+  const whatsappText = userWhatsappText ? `&${qs.stringify({text: userWhatsappText})}` : ''
 
   return (
     <a
       href={whatsapp ?
-          `https://api.whatsapp.com/send?phone=${phoneNumber}${whatsappText}`
+        `https://api.whatsapp.com/send?phone=${phoneNumber}${whatsappText}`
         :`tel:${phoneNumber}`
       }
-      target="_blank"
+      target='_blank'
       rel='noreferer nofollow'
       className={
         [
@@ -93,14 +93,14 @@ PhoneNumberLink.propTypes = {
 
 
   /**
-   * Icon for the phone number
-   */
-  icon:PropTypes.string,
-
-  /**
    * The default message to send on whatsapp.
    */
   whatsappText:PropTypes.string,
+
+  /**
+   * Icon for the phone number
+   */
+  icon:PropTypes.string,
 }
 
 PhoneNumberLink.defaultProps = {
