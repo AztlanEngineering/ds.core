@@ -16,6 +16,13 @@ if(!isBackend) {
 
 const baseClassName = 'circle_info'
 
+/**
+ * `CircleInfo` allows you to show a profile basic information including picture, name and subtitle <br/>
+ * background:`var(--y, var(--dark-white))`<br/>
+ * color: `var(--x, var(--paragraph))`<br/>
+ * color: `var(--y, var(--metadata))`
+ */
+
 const CircleInfo = ({
   id,
   className,

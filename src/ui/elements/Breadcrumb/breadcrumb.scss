@@ -6,23 +6,23 @@ Classes :
 */
 
 .breadcrumb {
-  padding-left: 0;
   list-style: none;
+  padding-left: 0;
 
   li {
     display: inline;
-    margin-bottom:0;
+    margin-bottom: 0;
   }
 
   li + li {
     &::before {
-      vertical-align: bottom;
-      margin:0 .5em;
       color: var(--x-light, var(--light-grey));
-      font-family: icons;
-      font-size:calc(var(--s-1) * 1em);
       content: " l ";
-      vertical-align:middle;
+      font-family: icons;
+      font-size: calc(var(--s-1) * 1em);
+      margin: 0 .5em;
+      vertical-align: bottom;
+      vertical-align: middle;
     }
   }
 
@@ -32,10 +32,10 @@ Classes :
 
   a {
     color: var(--subtitle);
+
     &:hover,
     &:focus {
       color: var(--dark-subtitle);
-      
     }
   }
 }

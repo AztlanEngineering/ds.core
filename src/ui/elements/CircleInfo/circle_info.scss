@@ -4,29 +4,30 @@ Classes :
 .circle_info : default
 
 */
-$circleSize:4em;
-$maxWidth:22em;
+$circle-size:4em;
+$max-width:22em;
 
 .circle_info {
-  position: relative;
+  height: $circle-size;
   min-width: max-content;
-  height: $circleSize;
+  position: relative;
 
   .circle {
-    background: var(--z, var(--dark-white));
-    width: $circleSize;
-    height: $circleSize;
+    background: var(--y, var(--dark-white));
+    height: $circle-size;
+    width: $circle-size;
   }
 
   .content {
+    height: $circle-size;
+    left: .5em;
     position: relative;
-    left: 0.5em;
-    width: calc(#{$maxWidth} - #{$circleSize});
-    height: $circleSize;
+    width: calc(#{$max-width} - #{$circle-size});
 
-    p, span {
-      min-width: max-content;
+    p,
+    span {
       line-height: 1em;
+      min-width: max-content;
       //font-size: calc(var(--s) * 1em);
 
       &:not(.subtitle) {

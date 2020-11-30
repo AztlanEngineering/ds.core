@@ -16,6 +16,15 @@ import { Item } from './common'
 
 const baseClassName = 'breadcrumb'
 
+/**
+ * `Breadcrumb` helps navigationg through the site easily showing trail of the path user navigated<br />
+ * color: `var(--x-light, var(--light-gray))`<br/>
+ * font-size:`calc(var(--s-1 * 1em))`<br/>
+ * color:`var(--metadata)` <br />
+ * color:`var(--subtitle)`<br />
+ * color:`var(--dark-subtitle)`
+ */
+
 const Breadcrumb = ({
   id,
   className,

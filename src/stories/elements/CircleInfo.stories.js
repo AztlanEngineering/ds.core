@@ -91,20 +91,6 @@ export const Variant = () =>(
   )
 )
 
-export const WithImage = () =>(
-  mapVariant.map((e,i) =>
-    <CircleInfo
-      title={ e.title }
-      subtitle={ e.subtitle }
-      circleClassName={ e.circle }
-      image={ e.image }
-      imageAlt={ e.imageAlt }
-      className={ e.className }
-      key={i}
-    />
-  )
-)
-
 export const Color = () => (
   mapVariant.map((e,i) =>
     i == 0 && <CircleInfo

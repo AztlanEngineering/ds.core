@@ -103,13 +103,9 @@ Item.propTypes = {
   children:PropTypes.node,
 
   /**
-   * Which html tag to use
+   * On click, internal link to
    */
-  as:PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.node
-  ]),
-  //as: PropTypes.string,
+  to:PropTypes.string,
 
   /**
    * The Schema position (https://developers.google.com/search/docs/data-types/breadcrumb)
@@ -117,29 +113,9 @@ Item.propTypes = {
   position:PropTypes.number.isRequired,
 
   /**
-   * On click, internal link to
-   */
-  to:PropTypes.string,
-
-  /**
    * The name of the breadcrumb item
    */
   name:PropTypes.string,
-
-  /**
-   *
-   */
-  //itemId: PropTypes.string, //Required except for last
-  /*
-  : PropTypes.shape({
-    id: PropTypes.string.isRequired,
-    title: PropTypes.string.isRequired,
-    state: PropTypes.string.isRequired,
-  }),
-  : PropTypes.func,
-  : PropTypes.func,
-  : PropTypes.oneOf(['', ''])
-  */
 }
 
 /*
