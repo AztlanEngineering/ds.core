@@ -52,7 +52,9 @@ export const ToStorybook = () => (
         .
       </li>
       <li>Stories outside a folder are there temporarily and will be removed prior to V2 release.</li>
+
     </ul>
+    <p>Work in progress...</p>
   </>
 )
 
