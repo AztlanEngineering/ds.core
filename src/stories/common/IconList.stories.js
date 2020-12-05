@@ -49,7 +49,7 @@ export const Default = () => {
     }
   ]
   return (
-    <IconList>
+    <IconList className='u1'>
       { items.map(({content, ...e}, i) =>
         <IconList.Item
           {...e}

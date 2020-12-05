@@ -8,22 +8,21 @@ Classes :
 */
 
 .side_bar {
+  //background: var(--x, var(--background));
   display: block;
-  grid-column: sidebar-start / sidebar-end;
+  //grid-column: sidebar-start / sidebar-end;
 
   //grid-row: 1/-1;,
   position: relative;
 
-  background: var(--x, var(--background));
-
   > .inside {
     display: flex;
     flex-direction: column;
+    height: 100vh;
     justify-content: safe center;
+    overflow-y: auto;
     position: -webkit-sticky;
     position: sticky;
     top: 0;
-    height: 100vh;
-    overflow-y: auto;
   }
 }

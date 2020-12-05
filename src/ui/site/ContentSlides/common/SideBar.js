@@ -15,7 +15,7 @@ import Context from './Context'
 
 
 /* Config */
-   import C from 'ui/cssClasses' 
+import C from 'ui/cssClasses'
 
 /* Relative imports
    import styles from './side_bar.scss'
@@ -61,13 +61,14 @@ const SideBar = ({
         /* styles[baseClassName],
            baseClassName, */
           className
+
         ].filter(e => e).join(' ')
       }
       id={ id }
       style={ style }
       { ...otherProps }
     >
-      <header>{ header }</header>
+      <header className='mv-v v2 u2 ph-u'>{ header }</header>
       <main>
         <IconList className='u1'>
           { slides.map((e, i) =>
@@ -75,7 +76,7 @@ const SideBar = ({
               key={i}
               icon={
                 (currentIndex == i) ? 'l' :
-                  (i < currentIndex ) && 'o'
+                  (i < currentIndex ) && 'O'
               }
               iconHover={
                 (i < currentIndex) && 'L'
@@ -84,7 +85,7 @@ const SideBar = ({
                 [
                   (currentIndex == i) ? 'x-primary' :
                     (i < currentIndex) ? 'x-subtitle xh-paragraph' :
-                    'x-paragraph',
+                      'x-paragraph',
                   (i < currentIndex) && C.pointer,
                   'c-x'
                 ].filter(e => e).join(' ')

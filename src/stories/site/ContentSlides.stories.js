@@ -68,7 +68,7 @@ export const Default = () => {
     } = useContext(ContentSlides.Context)
 
     return (
-      <div className='mt-u'>
+      <div className='mt-u navigator'>
         { !isLast &&
           <Button
             className='it x-success'
@@ -88,44 +88,57 @@ export const Default = () => {
   return (
     <ContentSlides
       slides={slides}
-      className='g'
+      className='u2 sm-u1'
 
     >
 
       <ContentSlides.HorizontalBar/>
-      <div className='g12 b-z z-primary'>
+      <ContentSlides.SideBar
+        className='x-orange b-x'
+        header={
+          <span className='h3 v2 mv-v'>
+            Onboarding
+          </span>
+        }
+        //progressBarClassName=''
+      />
+      <main className='content'>
         <ContentSlides.Slide
-          className='b-light-z z-primary c-on-z'
+          className=''
           index={ 0 }
         >
           Slide 0
           <Navigator />
         </ContentSlides.Slide>
         <ContentSlides.Slide
-          className='b-dark-z z-secondary c-on-z'
+          className=''
           index={ 1 }
         >
           Slide 1
           <Navigator />
         </ContentSlides.Slide>
         <ContentSlides.Slide
-          className='b-z z-accent1 c-on-z'
+          className=''
           index={ 2 }
         >
           Slide 2
           <Navigator />
         </ContentSlides.Slide>
         <ContentSlides.Slide
-          className='b-z z-accent2 c-on-z'
+          className=''
           index={ 3 }
         >
           Slide 3
           <Navigator />
         </ContentSlides.Slide>
-      </div>
+      </main>
     </ContentSlides>
   )
 
+}
+
+Default.parameters = {
+  layout:'fullscreen'
 }
 
 /*

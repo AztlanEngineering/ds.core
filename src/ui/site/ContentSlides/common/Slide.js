@@ -57,15 +57,16 @@ const Slide = ({
         //styles[baseClassName],
           baseClassName,
           active && C.active,
-          'u1 p-u t',
+          't',
           className
         ].filter(e => e).join(' ')
       }
       id={ id }
       style={ style }
     >
-      { title }
-      { children }
+      <div className='inside'>
+        { children }
+      </div>
     </Wrapper>
   )}
 

@@ -3,6 +3,9 @@ import * as React from 'react'
 import { useContext } from 'react'
 import PropTypes from 'prop-types'
 
+import {FormattedMessage} from 'react-intl'
+import messages from '../messages'
+
 import {
   ProgressBar
 } from 'ui/common'
@@ -60,18 +63,28 @@ const HorizontalBar = ({
       style={ style }
       { ...otherProps }
     >
+      <ProgressBar
+        current={ currentSlide.progress }
+        className={ progressBarClassName }
+        strokeWidth='5'
+      />
       <div className='yf inside u50 p-u'>
-        <Button
-          simple
-          className='it x-subtitle xh-paragraph'
-          icon='h'
-          iconSide='l'
-          onClick={() => setPrevSlide()}
-        >
-          Back
-        </Button>
-        <div className='row yib uc ph-u s2 ks yib'>
-          <span className='fh'>
+        <div className='left'>
+          {!isFirst &&
+            <Button
+              simple
+              compact
+              className='it x-subtitle xh-paragraph'
+              icon='h'
+              iconSide='l'
+              onClick={() => setPrevSlide()}
+            >
+              <FormattedMessage {...messages.back} />
+            </Button>
+          }
+        </div>
+        <div className='s2 ks yib title'>
+          <span className='tb fh'>
             { currentSlide.title }
           </span>
         </div>
@@ -84,10 +97,6 @@ const HorizontalBar = ({
         </Button>
         */}
       </div>
-      <ProgressBar
-        current={ currentSlide.progress }
-        className={ progressBarClassName }
-      />
     </BaseHorizontalBar>
   )}
 
