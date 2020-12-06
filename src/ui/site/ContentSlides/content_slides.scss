@@ -9,6 +9,8 @@ Classes :
 @use "@fwrlines/stylebook/src/mixins";
 @use "@fwrlines/stylebook/src/globals" as *;
 
+$slideWidth:800px;
+
 .content_slides {
   display: grid;
 
@@ -85,7 +87,8 @@ Classes :
     .slide {
       height: 100%;
 
-      .inside {
+
+      & > .inside {
         display: flex;
         flex-direction: column;
         height: 100%;
@@ -106,6 +109,11 @@ Classes :
     grid-template-areas: "menu content";
     grid-template-columns: minmax(250px, 330px) 1fr;
 
+    main.content {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
     .horizontal_bar {
       display: none;
     }
@@ -116,13 +124,14 @@ Classes :
       height: 100%;
       justify-content: center;
       padding: calc(2*var(--u));
+      width: $slideWidth;
 
       .inside {
       }
 
       .navigator {
-        margin-top: 1em;
-        text-align: right;
+        //margin-top: 1em;
+        //text-align: right;
       }
     }
   }

@@ -68,7 +68,7 @@ const SideBar = ({
       style={ style }
       { ...otherProps }
     >
-      <header className='mv-v v2 u2 ph-u'>{ header }</header>
+      <header className='mv-v v2 ph-u'>{ header }</header>
       <main>
         <IconList className='u1'>
           { slides.map((e, i) =>
@@ -83,7 +83,7 @@ const SideBar = ({
               }
               className={
                 [
-                  (currentIndex == i) ? 'x-primary' :
+                  (currentIndex == i) ? 'x-link' :
                     (i < currentIndex) ? 'x-subtitle xh-paragraph' :
                       'x-paragraph',
                   (i < currentIndex) && C.pointer,
@@ -105,7 +105,7 @@ const SideBar = ({
 
         </ul>
       </main>
-      <footer>{ footer }</footer>
+      { footer && <footer className='ph-u mv-v v2'>{ footer }</footer>}
     </BaseSideBar>
   )}
 
