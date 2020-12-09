@@ -12,12 +12,9 @@ Classes :
 $slideWidth:800px;
 
 .content_slides {
-  display: grid;
+  display: flex;
+  flex-direction: column;
 
-  grid-template-areas:
-    "menu"
-    "content";
-  height: 100%;
 
   position: relative;
 
@@ -45,10 +42,14 @@ $slideWidth:800px;
   }
 
   .horizontal_bar {
+    border-bottom: 1px solid var(--dark-y);
     padding-bottom: 5px;
 
     .progress_bar {
       display: block;
+      left: -1px;
+      position: relative;
+      top: -1px;
     }
 
     .inside {
@@ -66,6 +67,10 @@ $slideWidth:800px;
     }
   }
 
+  main.content {
+    flex: 1 0 1px;
+  }
+
   .side_bar {
     .inside {
       padding: var(--u);
@@ -78,7 +83,12 @@ $slideWidth:800px;
   }
 
   @include mixins.media($to:$sm-md) {
-    grid-template-rows: min-content 1fr;
+    height: 100%;
+
+    main.content {
+      height: 100%;
+      overflow: scroll;
+    }
 
     .side_bar {
       display: none;
@@ -93,6 +103,11 @@ $slideWidth:800px;
         flex-direction: column;
         height: 100%;
 
+        & > .inside {
+          flex: 1 0 1px;
+          overflow-y: scroll;
+        }
+
         .navigator {
           margin-top: auto;
         }
@@ -103,9 +118,14 @@ $slideWidth:800px;
         }
       }
     }
+
+    .l-resgrid:last-child {
+      margin-bottom: var(--u);
+    }
   }
 
   @include mixins.media($from:$sm-md) {
+    display: grid;
     grid-template-areas: "menu content";
     grid-template-columns: minmax(250px, 330px) 1fr;
 

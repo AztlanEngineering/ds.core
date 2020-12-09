@@ -83,8 +83,8 @@ const HorizontalBar = ({
             </Button>
           }
         </div>
-        <div className='s2 ks yib title'>
-          <span className='tb fh'>
+        <div className='s1 ks yib title'>
+          <span className='tb'>
             { currentSlide.title }
           </span>
         </div>
@@ -138,8 +138,8 @@ HorizontalBar.propTypes = {
 }
 
 HorizontalBar.defaultProps = {
-  progressBarClassName:'x-green xa xst',
-  className           :'x-background b-dark-x u50'
+  progressBarClassName:'x-green',
+  className           :'b-y u50'
   /* height:'2.2em',
      as:'p', */
 }
