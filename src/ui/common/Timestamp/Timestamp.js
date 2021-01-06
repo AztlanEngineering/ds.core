@@ -41,6 +41,7 @@ const Timestamp = ({
   distanceMaxDays,
   relativeMaxDays,
   dateFormat,
+  locale,
 
   as:Element
 }) => {
@@ -51,11 +52,11 @@ const Timestamp = ({
     'unix'    :(unix) => Number(unix),
     'date'    :(unix) => format(new Date(unix), dateFormat),
     'distance':(unix) => (!distanceMaxDays || (differenceInDays(Date.now(), new Date(unix)) < distanceMaxDays)) ?
-      formatDistance(new Date(unix), new Date(), { addSuffix: true })
+      formatDistance(new Date(unix), new Date(), { addSuffix: true, locale })
       : format(new Date(unix), dateFormat)
     ,
     'relative':(unix) => (!relativeMaxDays || (differenceInDays(Date.now(), new Date(unix)) < relativeMaxDays)) ?
-      formatRelative(new Date(unix), new Date())
+      formatRelative(new Date(unix), new Date(), { locale })
       : format(new Date(unix), dateFormat)
   }), [])
 
@@ -149,6 +150,11 @@ Timestamp.propTypes = {
    * The time to display
    */
   time:PropTypes.number.isRequired,
+
+  /**
+   * A Date-DNS locale object. Will default to english.
+   */
+  locale:PropTypes.object,
 }
 
 Timestamp.defaultProps = {
