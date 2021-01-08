@@ -7,8 +7,8 @@ Classes :
 $transitionDuration:.2s;
 $selectionAnimationHeight:.1em;
 $transformHoverScale:1.02;
-$section-padding:1.4em;
-$compact-section-padding:$section-padding/2;
+$section-padding:var(--u, 1.5em);
+$compact-section-padding:calc(#{$section-padding} /2);
 $shadow:var(--shadow);
 $shadow-hover:var(--shadow-hover, var(--shadow));
 
@@ -25,10 +25,10 @@ $shadow-hover:var(--shadow-hover, var(--shadow));
 
   .flip {
     color: var(--dark-x, var(--on-y));
-    opacity:.8;
     cursor: pointer;
     display: block;
     font-size: calc(var(--s-1) * 1em);
+    opacity: .8;
     opacity: .34;
     position: absolute;
     right: $section-padding / 2;
@@ -40,11 +40,11 @@ $shadow-hover:var(--shadow-hover, var(--shadow));
   }
 
   .back-face.back-face.back-face {
-    overflow-y:scroll;
-    top:0;
     height: 100%;
     left: 0;
+    overflow-y: scroll;
     position: absolute;
+    top: 0;
     transform: rotateY(180deg);
     z-index: 2;
   }
@@ -64,6 +64,8 @@ $shadow-hover:var(--shadow-hover, var(--shadow));
   //background: var(--y, transparent);
   border-radius: var(--r);
 
+  box-shadow: $shadow;
+
   display: block;
   height: 100%;
   overflow: hidden;
@@ -74,17 +76,15 @@ $shadow-hover:var(--shadow-hover, var(--shadow));
   visibility: visible;
   width: 100%;
 
-  box-shadow:$shadow;
-
   &:hover,
   &:focus {
-    box-shadow:$shadow-hover;
+    box-shadow: $shadow-hover;
   }
 
   & > .section.visible {
     z-index: 0;
 
-      &.img {
+    &.img {
       & > figure,
       & > img {
         width: 100%;
@@ -95,11 +95,11 @@ $shadow-hover:var(--shadow-hover, var(--shadow));
       padding: $section-padding;
 
       &:not(:first-of-type) {
-        padding-top: $section-padding / 2;
+        padding-top: calc(#{$section-padding} / 2);
       }
 
       &:not(:last-of-type) {
-        padding-bottom: $section-padding / 2;
+        padding-bottom: calc(#{$section-padding} / 2);
       }
 
       &:first-child:last-child {
@@ -114,16 +114,15 @@ $shadow-hover:var(--shadow-hover, var(--shadow));
   }
 
   &.compact > .section.visible {
-
     &:not(.img) {
       padding: $compact-section-padding;
 
       &:not(:first-of-type) {
-        padding-top: $compact-section-padding / 2;
+        padding-top: calc(#{$compact-section-padding} / 2);
       }
 
       &:not(:last-of-type) {
-        padding-bottom: $compact-section-padding / 2;
+        padding-bottom: calc(#{$compact-section-padding} / 2);
       }
 
       &:first-child:last-child {
