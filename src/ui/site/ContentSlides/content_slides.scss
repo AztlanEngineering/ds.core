@@ -38,6 +38,7 @@ $slideWidth:800px;
     }
 
     .inside {
+
     }
   }
 
@@ -58,6 +59,10 @@ $slideWidth:800px;
 
       .left {
         flex: 1,;
+      }
+
+      .title p {
+        margin-top: .3em;
       }
 
       &::after {
@@ -87,7 +92,7 @@ $slideWidth:800px;
 
     main.content {
       height: 100%;
-      overflow: scroll;
+      overflow: auto;
     }
 
     .side_bar {
@@ -105,7 +110,7 @@ $slideWidth:800px;
 
         & > .inside {
           flex: 1 0 1px;
-          overflow-y: scroll;
+          overflow-y: auto;
         }
 
         .navigator {
@@ -147,6 +152,7 @@ $slideWidth:800px;
       width: $slideWidth;
 
       .inside {
+
       }
 
       .navigator {

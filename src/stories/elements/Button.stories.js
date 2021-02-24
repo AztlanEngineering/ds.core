@@ -321,7 +321,7 @@ export const GroupVertical = () =>
     )}
   </Button.Group>
 
-export const GroupVerticalIndep = () =>
+export const GroupVerticalIndep = () =>(
   <Button.Group
     vertical
     independent
@@ -337,3 +337,39 @@ export const GroupVerticalIndep = () =>
       </Button>
     )}
   </Button.Group>
+)
+
+
+export const Bomb = () => (
+  <>
+    <Button className='x-secondary bomb'>Click me</Button>
+    <Button
+      className='bomb'
+      disabled
+    >
+      You can't, I'm disabled
+    </Button>
+    <Button
+      className='x-yellow bomb'
+      icon='F'
+      iconSide='l'
+    >
+      I'm yellow!
+    </Button>
+    <Button
+      className='x-orange bomb it'
+      icon='F'
+      iconSide='r'
+    >
+      Orange
+    </Button>
+    <Button
+      className='x-orange bomb it left'
+      icon='F'
+      iconSide='r'
+    >
+      Orange
+    </Button>
+  </>
+
+)

@@ -5,7 +5,7 @@ Classes :
 
 */
 $background: var(--x, transparent);
-$regular-border-radius: var(--r);
+$regular-border-radius: var(--theme-border-radius);
 $color: var(--on-x, var(--subtitle));
 $padding-top:.3em;
 $padding-side:.5em;

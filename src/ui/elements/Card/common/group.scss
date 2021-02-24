@@ -1,4 +1,5 @@
 /* @fwrlines/generator-react-component 2.3.4 */
+
 /*
 
 Classes :
@@ -7,7 +8,7 @@ Classes :
 */
 
 //Cards
-$scrollPadding:calc(var(--u, 0) * 1rem);
+$scrollPadding:var(--u, 0);
 $gaps:.5em;
 $card-width:300px;
 
@@ -53,12 +54,12 @@ $card-width:300px;
         & + .scene {
           margin-left: $gaps;
         }
-
       }
-        &::after {
-          content: "";
-          flex: 0 0 $scrollPadding;
-        }
+
+      &::after {
+        content: "";
+        flex: 0 0 $scrollPadding;
+      }
 
       figcaption {
         display: none;

@@ -1,0 +1,6 @@
+@import "@fwrlines/stylebook/src/main.scss";
+@import "@fwrlines/swatch/src/main.scss";
+
+:root {
+  --theme-border: 2px solid var(--paragraph);
+}

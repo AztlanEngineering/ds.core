@@ -38,7 +38,9 @@ const HorizontalBar = ({
   id,
   className,
   style,
+  buttonClassName,
   progressBarClassName,
+  progressBarStyle,
   ...otherProps
 }) => {
 
@@ -66,6 +68,7 @@ const HorizontalBar = ({
       <ProgressBar
         current={ currentSlide.progress }
         className={ progressBarClassName }
+        style={ progressBarStyle }
         strokeWidth='5'
       />
       <div className='yf inside u50 p-u'>
@@ -74,7 +77,10 @@ const HorizontalBar = ({
             <Button
               simple
               compact
-              className='it x-subtitle xh-paragraph'
+              className={[
+                buttonClassName,
+                'it x-subtitle xh-paragraph',
+              ].filter( e => e ).join(' ')}
               icon='h'
               iconSide='l'
               onClick={() => setPrevSlide()}
@@ -84,9 +90,9 @@ const HorizontalBar = ({
           }
         </div>
         <div className='s1 ks yib title'>
-          <span className='tb'>
+          <p className='tb'>
             { currentSlide.title }
-          </span>
+          </p>
         </div>
         {/*
         <Button
@@ -122,9 +128,19 @@ HorizontalBar.propTypes = {
   children:PropTypes.node,
 
   /**
+   * The html styles to be provided to the progress bar. Warning : experimental api
+   */
+  buttonClassName:PropTypes.string,
+
+  /**
    * The html class names to be provided to the progress bar. Warning : experimental api
    */
   progressBarClassName:PropTypes.string,
+
+  /**
+   * The html styles to be provided to the progress bar. Warning : experimental api
+   */
+  progressBarStyle:PropTypes.string,
   /*
   : PropTypes.shape({
     id: PropTypes.string.isRequired,

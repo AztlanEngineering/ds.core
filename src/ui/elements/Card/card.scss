@@ -62,7 +62,7 @@ $shadow-hover:var(--shadow-hover, var(--shadow));
   //display:flex;
   //flex-direction:column;
   //background: var(--y, transparent);
-  border-radius: var(--r);
+  border-radius: var(--theme-border-radius);
 
   box-shadow: $shadow;
 

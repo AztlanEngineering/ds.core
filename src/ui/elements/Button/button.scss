@@ -34,7 +34,7 @@ $iconTransitionTime:.3s;
   //height:min-content;
   background: var(--x, var(--metadata));
   border: 0;
-  border-radius: var(--r);
+  border-radius: var(--theme-border-radius);
   color: var(--on-x, var(--paragraph));
   cursor: pointer;
   font-family: $fontFamily;
@@ -56,7 +56,6 @@ $iconTransitionTime:.3s;
       :not(.g-button) > & {
         height: $lineHeight + $compact-padding-top + $compact-padding-bottom;
       }
-
     }
   }
 
@@ -102,8 +101,7 @@ $iconTransitionTime:.3s;
     padding: $padding-icon-general;
 
     &.compact {
-      padding:$compact-size-factor * $padding-icon-general;
-
+      padding: $compact-size-factor * $padding-icon-general;
     }
   }
 
@@ -128,10 +126,9 @@ $iconTransitionTime:.3s;
         width: $iconBackWidth;
         z-index: -1;
       }
-
     }
 
-    &.compact { 
+    &.compact {
       i {
         padding: $compact-padding-icon;
       }
@@ -206,6 +203,37 @@ $iconTransitionTime:.3s;
           }
         }
       }
+    }
+  }
+
+
+  &.bomb {
+    border: var(--theme-border);
+    border-radius: 0 3em 3em 0;
+    color: var(--paragraph);
+    font-family: var(--font-subtitle, var(--font-paragraph));
+    font-size: var(--s-1);
+    letter-spacing: .1em;
+    text-transform: uppercase;
+
+    --on-x: var(--paragraph);
+
+    &.ir i,
+    &.il i {
+      background: transparent;
+
+      &::before {
+        background: transparent;
+      }
+    }
+
+    &:disabled {
+      text-decoration: line-through;
+    }
+
+    &.left {
+      border: var(--theme-border);
+      border-radius: 3em 0 0 3em;
     }
   }
 }
